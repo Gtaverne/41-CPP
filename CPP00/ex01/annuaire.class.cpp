@@ -55,8 +55,7 @@ void	concat (std::string str)
 		std::cout << "  EMPTY   ";
 		return ;
 	}
-	while (str[len])
-		len++;
+	len = str.length();
 	for (int k = 0; k < 10; k++)
 	{
 		if (len > 10 && k == 9)
@@ -91,7 +90,7 @@ int member::addcontact(int i)
 {
 	std::string	str;
 
-	std::cout << "Creation of a new contact" << std::endl;
+	std::cout << "New contact" << std::endl;
 	std::cout << "-----------------------------" << std::endl;
 	std::cout << "Enter the first name : ";
 	std::getline(std::cin, str);

@@ -1,11 +1,11 @@
-NAME	=	PhoneBook
+NAME	=	annuairenul
 CC		=	clang++
-HEADER	=	annuaire.class.hpp
+HEADER	=	Account.hpp
 OBJDIR	=	obj
-SRC		=	annuaire.cpp annuaire.class.cpp
+SRC		=	Account.cpp test.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	#-Wall -Wextra -Werror
 
 all: $(NAME)
 

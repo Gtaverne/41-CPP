@@ -6,6 +6,7 @@ int main ()
 	member annuaire[8];
 	int loop = 1;
 	std::string		buf;
+	std::string dummy;
 	int i = 0;
 
 	while (loop)
@@ -26,15 +27,18 @@ int main ()
 				{
 					std::cout << k << " : " << annuaire[k].getvalue(1) << std::endl;
 				}
-				int k = 0;
-				std::cin >> k;
-				if (k > 0 && k <= 7)
+				std::getline(std::cin, dummy);
+				if (!dummy.empty() && dummy[0] >= '0' && dummy[0] <= '7' && !dummy[1])
 				{
-					std::string dummy;
-					std::getline(std::cin, dummy);
-					annuaire[k].addcontact(k);
+					annuaire[dummy[0] - '0'].addcontact(dummy[0] - '0');
 					break ;
 				}
+				else
+				{
+					std::cout << "This is not a contact in the list" << std::endl;
+					break ;
+				}
+				
 				i = 8;
 			}
 			if (i < 8)
@@ -42,20 +46,25 @@ int main ()
 		}
 		else if (buf == "SEARCH")
 		{
-			int index = -1;
-			std::string saisie;
-			while (index < 0 || index > i)
+			if (i == 0)
+					std::cout << "There is nothing to search, write ADD" << std::endl;
+			else
 			{
-				display (annuaire);
-				std::cout << "Write the index of the contact you want to check" << std::endl;
-				std::cin >> saisie;
-				if (saisie.empty() || (index = saisie[0] - '0') < 0 || index >= i || saisie[1] != 0)
-				{	
-					std::cout << "Incoherent index" << std::endl;
-					index = -1;
+				int index = -1;
+				std::string saisie;
+				while (index < 0 || index > i)
+				{
+					display (annuaire);
+					std::cout << "Write the index to investigate" << std::endl;
+					std::cin >> saisie;
+					if (saisie.empty() || (index = saisie[0] - '0') < 0 || index >= i || saisie[1] != 0)
+					{	
+						std::cout << "Incoherent index" << std::endl;
+						index = -1;
+					}
+					else
+						annuaire[index].fullcontact();			
 				}
-				else
-					annuaire[index].fullcontact();			
 			}
 		}
 	}
