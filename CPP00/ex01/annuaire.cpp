@@ -19,18 +19,18 @@ int main ()
 			if (i == 7)
 			{
 				std::cout << "The list is full, select an element to delete :" << std::endl;
-				for (int k; k <= i; k++)
+				for (int k=0; k <= i; k++)
 				{
-					std::cout << k << " : " << annuaire[k]->getvalue() << std::endl;
+					std::cout << k << " : " << annuaire[k].getvalue(k) << std::endl;
 
 				}
 			}
 			else
-				i = annuaire[i].ADD(i);
+				i = annuaire[i].addcontact(i);
 		}
 		else if (buf == "SEARCH")
 		{
-			i = annuaire[i].ADD(i);
+			i = annuaire[i].addcontact(i);
 		}
 	}
 	return (0);

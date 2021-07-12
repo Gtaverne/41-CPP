@@ -5,15 +5,15 @@
 class member
 {
 	public:
-	int		add (int i);
+	int		addcontact (int i);
 	void	getline (int i);
 	member (void);
 	~member (void);
-	void		getvalue (int val);
-	void		setvalue (int val, std::string str);
 	int			index;
+	std::string	getvalue (int val);
 
 	private:
+	void		setvalue (int val, std::string str);
 	std::string	_first_name;
 	std::string	_last_name;
 	std::string	_nickname;
