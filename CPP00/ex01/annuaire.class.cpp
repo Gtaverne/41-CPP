@@ -52,7 +52,7 @@ void	concat (std::string str)
 	res[10] = 0;
 	if (str.empty())
 	{
-		std::cout << "  EMPTY   ";
+		std::cout << "--EMPTY-- ";
 		return ;
 	}
 	len = str.length();
@@ -123,6 +123,6 @@ void member::fullcontact( void )
 	std::cout << "Nickname     : " << this->_nickname << std::endl;
 	std::cout << "Phone number : " << this->_phone_number << std::endl;
 	std::cout << "Dark secret  : " << this->_darkest_secret << std::endl;
-	std::string dummy;
-	std::getline(std::cin, dummy);
+	// std::string dummy;
+	// std::getline(std::cin, dummy);
 }

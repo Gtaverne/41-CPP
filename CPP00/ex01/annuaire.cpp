@@ -13,7 +13,7 @@ int main ()
 	{
 		std::cout << "Write ADD, EXIT or SEARCH" << std::endl;
 		std::getline(std::cin, buf);
-		if (buf == "EXIT")
+		if (buf == "EXIT" || buf[0] == 0)
 		{
 			std::cout << "We had some fun, time to clean and close" << std::endl;
 			loop = 0;
@@ -56,7 +56,7 @@ int main ()
 				{
 					display (annuaire);
 					std::cout << "Write the index to investigate" << std::endl;
-					std::cin >> saisie;
+					std::getline(std::cin, saisie);
 					if (saisie.empty() || (index = saisie[0] - '0') < 0 || index >= i || saisie[1] != 0)
 					{	
 						std::cout << "Incoherent index" << std::endl;

@@ -1,8 +1,8 @@
-NAME	=	worldcompany
+NAME	=	cerveau
 CC		=	clang++
-HEADER	=	Account.hpp
+HEADER	=	Zombie.hpp
 OBJDIR	=	obj
-SRC		=	Account.cpp test.cpp
+SRC		=	 main.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror
