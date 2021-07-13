@@ -5,7 +5,7 @@ OBJDIR	=	obj
 SRC		=	 main.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=cpp01
 
 all: $(NAME)
 

@@ -13,7 +13,7 @@ bonus: all
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "Ca compile <3"
+	@echo "Ca compile !!"
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p obj

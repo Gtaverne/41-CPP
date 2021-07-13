@@ -1,6 +1,128 @@
 #include <iostream>
 #include "annuaire.class.hpp"
 
+//fonctions d'annuaire
+
+int phonebook::in = 0;
+
+phonebook::phonebook( void )
+{
+	std::cout << "We created a phonebook" << std::endl;
+	std::cout << "There are only 3 commands: ADD, EXIT or SEARCH" << std::endl;
+	return ;
+}
+
+phonebook::~phonebook( void )
+{
+	std::cout << "That's all, you called the destructor" << std::endl;
+	return ;
+}
+
+void	phonebook::bigloop(std::string buf)
+{
+	if (buf == "ADD")
+		this->_addmember();
+	else if (buf == "SEARCH")
+		this->_searchmember();
+	std::cout << "Write ADD, EXIT or SEARCH" << std::endl;
+}
+
+void	phonebook::_concat (std::string str)
+{
+	char res[11];
+	int len = 0;
+
+	res[10] = 0;
+	if (str.empty())
+	{
+		std::cout << "--EMPTY-- ";
+		return ;
+	}
+	len = str.length();
+	for (int k = 0; k < 10; k++)
+	{
+		if (len > 10 && k == 9)
+			std::cout << '.';
+		else if (len >= 10)
+			std::cout << str[k];
+		else if (len < 10 && k >= 10 - len)
+			std::cout << str[len - 10 + k];
+		else
+			std::cout << ' ';
+	}
+}
+
+void	phonebook::_addmember()
+{
+	std::string 	dummy;
+	while (this->in < 0 || this->in > 7)
+	{
+		std::cout << "The list is full, overwrite a contact :" << std::endl;
+		for (int k=0; k < this->in; k++)
+		{
+			std::cout << k << " : " << this->list[k].getvalue(1) << std::endl;
+		}
+		std::getline(std::cin, dummy);
+		if (!dummy.empty() && dummy[0] >= '0' && dummy[0] <= '7' && !dummy[1])
+		{
+			this->list[dummy[0] - '0'].addcontact(dummy[0] - '0');
+			break ;
+		}
+		else
+		{
+			std::cout << "This is not a contact in the list" << std::endl;
+			break ;
+		}
+		
+		this->in = 8;
+	}
+	if (this->in < 8)
+		this->in = this->list[this->in].addcontact(this->in);
+}
+
+void	phonebook::_searchmember()
+{
+	if (this->in == 0)
+		std::cout << "There is nothing to search, write ADD" << std::endl;
+	else
+	{
+		int index = -1;
+		std::string saisie;
+		while (index < 0 || index > this->in)
+		{
+			this->_display (this->list);
+			std::cout << "Write the index to investigate" << std::endl;
+			std::getline(std::cin, saisie);
+			if (saisie.empty() || (index = saisie[0] - '0') < 0 || index >= this->in || saisie[1] != 0)
+			{	
+				std::cout << "Incoherent index" << std::endl;
+				index = -1;
+			}
+			else
+				this->list[index].fullcontact();			
+		}
+	}
+}
+
+void	phonebook::_display( member *annuaire )
+{
+	std::cout << "Index     |First Name|Last Name |Nickname  |" << std::endl;
+	int i = 0;
+	while (i < 8 && !(annuaire[i].getvalue(0).empty()))
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			this->_concat(annuaire[i].getvalue(j));
+			if (j < 4)
+				std::cout << '|';
+		}
+		std::cout << std::endl;
+		i++;
+	}
+}
+
+//fonctions de member
+
 member::member( void )
 {
 	return ;
@@ -44,47 +166,6 @@ void member::setvalue(int val, std::string str)
 		this->_darkest_secret = str;
 }
 
-void	concat (std::string str)
-{
-	char res[11];
-	int len = 0;
-
-	res[10] = 0;
-	if (str.empty())
-	{
-		std::cout << "--EMPTY-- ";
-		return ;
-	}
-	len = str.length();
-	for (int k = 0; k < 10; k++)
-	{
-		if (len > 10 && k == 9)
-			std::cout << '.';
-		else if (len >= 10)
-			std::cout << str[k];
-		else if (len < 10 && k >= 10 - len)
-			std::cout << str[len - 10 + k];
-		else
-			std::cout << ' ';
-	}
-}
-
-void	display( member *annuaire )
-{
-	std::cout << "Index     |First Name|Last Name |Nickname  |" << std::endl;
-	int i = 0;
-	while (i < 8 && !(annuaire[i].getvalue(0).empty()))
-	{
-		for (int j = 0; j < 4; j++)
-		{
-			concat(annuaire[i].getvalue(j));
-			if (j < 4)
-				std::cout << '|';
-		}
-		std::cout << std::endl;
-		i++;
-	}
-}
 
 int member::addcontact(int i)
 {
@@ -123,6 +204,5 @@ void member::fullcontact( void )
 	std::cout << "Nickname     : " << this->_nickname << std::endl;
 	std::cout << "Phone number : " << this->_phone_number << std::endl;
 	std::cout << "Dark secret  : " << this->_darkest_secret << std::endl;
-	// std::string dummy;
-	// std::getline(std::cin, dummy);
+
 }
