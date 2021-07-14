@@ -1,8 +1,8 @@
-NAME	=	cerveau
+NAME	=	excessiveforce
 CC		=	clang++
-HEADER	=	Zombie.hpp
+HEADER	=	HumanA.hpp HumanB.hpp Weapon.hpp
 OBJDIR	=	obj
-SRC		=	 main.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
+SRC		=	HumanA.cpp HumanB.cpp Weapon.cpp  main.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98

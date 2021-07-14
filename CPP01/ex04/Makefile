@@ -1,8 +1,8 @@
-NAME	=	cerveau
+NAME	=	sed_mkay
 CC		=	clang++
-HEADER	=	Zombie.hpp
+HEADER	=	mkay.hpp
 OBJDIR	=	obj
-SRC		=	 main.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
+SRC		=	main.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98

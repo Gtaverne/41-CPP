@@ -1,8 +1,8 @@
-NAME	=	cerveau
+NAME	=	talaref
 CC		=	clang++
-HEADER	=	Zombie.hpp
+#HEADER	=	x.hpp
 OBJDIR	=	obj
-SRC		=	 main.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
+SRC		=	main.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98

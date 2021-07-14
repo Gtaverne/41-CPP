@@ -12,6 +12,15 @@ Zombie::Zombie	(std::string zombname)
 
 }
 
+Zombie::Zombie (void)
+{
+	this->_zname = "x";
+}
+
+void Zombie::setname(std::string name)
+{
+	this->_zname = name;
+}
 
 Zombie::~Zombie	(void)
 {

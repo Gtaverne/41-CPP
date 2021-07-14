@@ -83,7 +83,7 @@ void	phonebook::_addmember()
 void	phonebook::_searchmember()
 {
 	if (this->in == 0)
-		std::cout << "There is nothing to search, write ADD" << std::endl;
+		std::cout << "There is nothing to search, try ADD" << std::endl;
 	else
 	{
 		int index = -1;

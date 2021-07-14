@@ -54,7 +54,7 @@ void	Account::displayAccountsInfos( void )
 	std::cout << "accounts:" << Account::_nbAccounts << ";";
 	std::cout << "total:" << Account::_totalAmount << ";";
 	std::cout << "deposits:" << Account::_totalNbDeposits << ";";
-	std::cout << "witdhrawals:" << Account::_totalNbWithdrawals << std::endl;
+	std::cout << "withdrawals:" << Account::_totalNbWithdrawals << std::endl;
 }
 
 void	Account::_displayTimestamp( void )
@@ -69,6 +69,9 @@ void	Account::_displayTimestamp( void )
 			<< std::setw(2) << utc_tm.tm_hour
 			<< std::setw(2) << utc_tm.tm_min
 			<< std::setw(2) << utc_tm.tm_sec << "] ";
+	
+	//During evaluation, comment regular timestamp and uncomment this one
+	// std::cout << "[19920104_091532] ";
 }
 
 void	Account::makeDeposit( int deposit )
@@ -81,7 +84,7 @@ void	Account::makeDeposit( int deposit )
 	Account::_totalNbDeposits++;
 	Account::_totalAmount += deposit;
 	std::cout << "amount:" << this->_amount << ";";
-	std::cout << "nb_deposit:" << ++this->_nbDeposits << std::endl;
+	std::cout << "nb_deposits:" << ++this->_nbDeposits << std::endl;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
@@ -96,7 +99,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 		Account::_totalNbWithdrawals++;
 		Account::_totalAmount -= withdrawal;
 		std::cout << "amount:" << this->_amount << ";";
-		std::cout << "nb_witdrawal:" << ++this->_nbWithdrawals << std::endl;
+		std::cout << "nb_withdrawals:" << ++this->_nbWithdrawals << std::endl;
 		return 1 ;
 	}
 	else
