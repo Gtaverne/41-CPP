@@ -2,7 +2,7 @@ NAME	=	sed_mkay
 CC		=	clang++
 HEADER	=	mkay.hpp
 OBJDIR	=	obj
-SRC		=	main.cpp
+SRC		=	main.cpp mkay.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98

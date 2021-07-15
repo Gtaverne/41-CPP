@@ -4,16 +4,23 @@
 #include <iostream>
 #include <fstream>
 
+
 class wellsed {
 	public:
-	wellsed::wellsed(std::string, std::string, std::string);
-
+	wellsed(std::string, std::string, std::string);
+	~wellsed();
+	bool test();
+	void rockit();
 
 	private:
+	std::ifstream reader;
+	std::ofstream writer;
 	std::string _input;
 	std::string _output;
-	std::string	_src;
-	std::string _rep;
+	std::string	_tofind;
+	std::string _toreplace;
+	std::string _temp;
+	std::string _result;
 };
 
 #endif
