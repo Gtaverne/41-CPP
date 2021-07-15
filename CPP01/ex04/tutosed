@@ -1,0 +1,23 @@
+If you want to compare results to the original sed, write :
+
+sed 's/<STR1>/<STR2>/' <source file> > <source file>.replace
+
+To test my sed
+make re && ./sed_mkay tutosed and AND 
+
+Alsom some more text her to practice:
+
+Lobsters are a family (Nephropidae, sometimes also Homeridae) of large marine crustaceans.
+
+Lobsters have long bodies with muscular tails, and live in crevices or burrows on the sea floor.
+Three of their five pairs of legs have claws, including the first pair, which are usually much larger than the others.
+Highly prized as seafood, lobsters are economically important, and are often one of the most profitable
+commodities in coastal areas they populate.
+
+Although several other groups of crustaceans have the word "lobster" in their names,
+the unqualified term "lobster" generally refers to the clawed lobsters of the family
+Nephropidae.[3] Clawed lobsters are not closely related to spiny lobsters or slipper
+lobsters, which have no claws (chelae), or to squat lobsters.
+The most similar living relatives of clawed lobsters are the reef lobsters and
+the three families of freshwater crayfish.
+

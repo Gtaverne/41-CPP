@@ -1,0 +1,24 @@
+#ifndef KAREN_HPP
+# define KAREN_HPP
+
+
+#include <iostream>
+#include <map>
+
+class Karen
+{
+	public:
+	Karen(void);
+	~Karen(void);
+	void complain(std::string);
+
+	private:
+	void debug( void );
+	void info( void );
+	void warning( void );
+	void error( void );
+};
+
+typedef void (Karen:: *FnPtr)();
+
+#endif

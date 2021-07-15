@@ -1,8 +1,8 @@
-NAME	=	sed_mkay
+NAME	=	karenwaffen
 CC		=	clang++
-HEADER	=	mkay.hpp
+HEADER	=	Karen.hpp
 OBJDIR	=	obj
-SRC		=	main.cpp mkay.cpp
+SRC		=	main.cpp Karen.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
@@ -13,7 +13,7 @@ bonus: all
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "Ca compile \\o/ \nL'util s'appelle sed_mkay\n"
+	@echo "Ca compile \\o/ \nL'util s'appelle karenwaffen\n"
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p obj
