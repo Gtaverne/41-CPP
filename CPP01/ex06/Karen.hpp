@@ -18,4 +18,5 @@ class Karen
 	void error( void );
 };
 
+
 #endif

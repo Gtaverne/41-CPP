@@ -36,31 +36,11 @@ void Karen::error( void )
 
 void Karen::complain(std::string input)
 {
-	const char *possibilities[4] = { "DEBUG", "INFO", "WARNING", "ERROR"};
-	void	(Karen::*Vectorfunc)(void);
-	int res = 5;
-	//faire un while qui pue
-	for (int i = 0; i < 4; i++)
-	{
-		if (input == possibilities[i])
-			res = i;
-	}
+	std::map<std::string, FnPtr> _functionmap;
+	_functionmap["DEBUG"] = &Karen::debug;
+	_functionmap["INFO"] = &Karen::info;
+	_functionmap["WARNING"] = &Karen::warning;
+	_functionmap["ERROR"] = &Karen::error;
 
-	std::cout << std::endl;
-	switch (res)
-	{
-	case 0:
-		Vectorfunc = &Karen::debug;
-		break;
-	case 1:
-		Vectorfunc = &Karen::info;
-		break;
-	case 2:
-		Vectorfunc = &Karen::warning;
-		break;
-	case 3:
-		Vectorfunc = &Karen::error;
-		break;
-	}
-	(this->*Vectorfunc)();
+	(this->*_functionmap[input])();
 }
