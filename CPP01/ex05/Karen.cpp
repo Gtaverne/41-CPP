@@ -38,15 +38,11 @@ void Karen::complain(std::string input)
 {
 	const char *possibilities[4] = { "DEBUG", "INFO", "WARNING", "ERROR"};
 	void	(Karen::*Vectorfunc)(void);
-	int res = 5;
+	int res = 0;
 	//faire un while qui pue
-	for (int i = 0; i < 4; i++)
-	{
-		if (input == possibilities[i])
-			res = i;
-	}
+	while (res < 4 && input != possibilities[res])
+		res++;
 
-	std::cout << std::endl;
 	switch (res)
 	{
 	case 0:
@@ -61,6 +57,9 @@ void Karen::complain(std::string input)
 	case 3:
 		Vectorfunc = &Karen::error;
 		break;
+	default:
+		std::cout << "A random complaint. Ignore it" << std::endl;
+		return ;
 	}
 	(this->*Vectorfunc)();
 }

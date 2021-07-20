@@ -12,4 +12,6 @@ int main()
 	TheKaren.complain("WARNING");
 	std::cout << std::endl;
 	TheKaren.complain("ERROR");
+	std::cout << std::endl;
+	TheKaren.complain("Absurd input");
 }
