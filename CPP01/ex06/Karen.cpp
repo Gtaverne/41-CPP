@@ -47,19 +47,19 @@ void Karen::complain(std::string input)
 	{
 	case 0:
 		Vectorfunc = &Karen::debug;
-		break;
+		(this->*Vectorfunc)();
 	case 1:
 		Vectorfunc = &Karen::info;
-		break;
+		(this->*Vectorfunc)();
 	case 2:
 		Vectorfunc = &Karen::warning;
-		break;
+		(this->*Vectorfunc)();
 	case 3:
 		Vectorfunc = &Karen::error;
+		(this->*Vectorfunc)();
 		break;
 	default:
 		std::cout << "A random complaint. Ignore it" << std::endl;
 		return ;
 	}
-	(this->*Vectorfunc)();
 }
