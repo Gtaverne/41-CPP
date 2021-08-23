@@ -26,8 +26,6 @@ Fixed::Fixed (float const val)
 	_valfix = roundf(val * ( 1 << _nb));
 }
 
-
-
 //Basic manipulations
 
 int Fixed::getRawBits(void) const
