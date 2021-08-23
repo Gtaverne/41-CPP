@@ -1,4 +1,4 @@
-NAME	=	ex1
+NAME	=	ex2
 CC		=	clang++
 HEADER	=	Fixed.hpp
 OBJDIR	=	obj
@@ -11,7 +11,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "Ca compile \\o/ \nL'util s'appelle ex1\n"
+	@echo "Ca compile \\o/ \nL'util s'appelle ex2\n"
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p obj

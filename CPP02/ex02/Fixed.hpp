@@ -18,6 +18,21 @@ class Fixed
 
 	Fixed & operator=(Fixed const & rhs);
 
+	Fixed operator+(Fixed const & rhs);
+	Fixed operator-(Fixed const & rhs);
+	Fixed operator*(Fixed const & rhs);
+	Fixed operator/(Fixed const & rhs);
+	
+	bool operator>(Fixed const & rhs);
+	bool operator<(Fixed const & rhs);
+	bool operator>=(Fixed const & rhs);
+	bool operator<=(Fixed const & rhs);
+	bool operator==(Fixed const & rhs);
+	bool operator!=(Fixed const & rhs);
+
+	Fixed & min(Fixed const & lhs, Fixed const & rhs);
+	Fixed & max(Fixed const & lhs, Fixed const & rhs);
+
 	int toInt(void) const;
 	float toFloat(void) const;
 
