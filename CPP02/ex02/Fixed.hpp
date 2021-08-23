@@ -18,20 +18,25 @@ class Fixed
 
 	Fixed & operator=(Fixed const & rhs);
 
-	Fixed operator+(Fixed const & rhs);
-	Fixed operator-(Fixed const & rhs);
-	Fixed operator*(Fixed const & rhs);
-	Fixed operator/(Fixed const & rhs);
-	
-	bool operator>(Fixed const & rhs);
-	bool operator<(Fixed const & rhs);
-	bool operator>=(Fixed const & rhs);
-	bool operator<=(Fixed const & rhs);
-	bool operator==(Fixed const & rhs);
-	bool operator!=(Fixed const & rhs);
+	Fixed operator+(Fixed const & rhs) const;
+	Fixed operator-(Fixed const & rhs) const;
+	Fixed operator*(Fixed const & rhs) const;
+	Fixed operator/(Fixed const & rhs) const;
 
-	Fixed & min(Fixed const & lhs, Fixed const & rhs);
-	Fixed & max(Fixed const & lhs, Fixed const & rhs);
+	Fixed & operator++(void);
+	Fixed operator++(int);
+	Fixed & operator--(void);
+	Fixed operator--(int);
+	
+	bool operator>(Fixed const & rhs) const;
+	bool operator<(Fixed const & rhs) const;
+	bool operator>=(Fixed const & rhs) const;
+	bool operator<=(Fixed const & rhs) const;
+	bool operator==(Fixed const & rhs) const;
+	bool operator!=(Fixed const & rhs) const;
+
+	static Fixed const & min(Fixed const & lhs, Fixed const & rhs);
+	static Fixed const & max(Fixed const & lhs, Fixed const & rhs);
 
 	int toInt(void) const;
 	float toFloat(void) const;
@@ -41,6 +46,9 @@ class Fixed
 	static int const _nb = 8;
 };
 
+
+Fixed const & min(Fixed const & lhs, Fixed const & rhs);
+Fixed const & max(Fixed const & lhs, Fixed const & rhs);
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs);
 
 #endif
