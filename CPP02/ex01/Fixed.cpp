@@ -17,6 +17,13 @@ Fixed::Fixed (Fixed const &input)
 	*this = input;
 }
 
+Fixed::Fixed (int const val)
+{
+	std::cout << "Int constructor called" << std::endl;	
+	this->setRawBits(val);
+}
+
+
 int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
@@ -29,9 +36,9 @@ void Fixed::setRawBits(int const raw)
 	this->_valfix = raw;
 }
 
-Fixed & Fixed::operator=(Fixed const & right)
+Fixed & Fixed::operator=(Fixed const & rhs)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	this->_valfix = right.getRawBits();
+	this->_valfix = rhs.getRawBits();
 	return *this;
 }
