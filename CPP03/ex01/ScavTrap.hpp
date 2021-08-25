@@ -5,17 +5,18 @@
 
 class ScavTrap : public ClapTrap
 {
-	public:
+public:
 	//canon
 	ScavTrap(void);
 	ScavTrap(std::string const & name);
 	ScavTrap (ScavTrap const &input);
-	~ScavTrap(void);
+	virtual ~ScavTrap(void);
 	ScavTrap & operator=(ScavTrap const & rhs);
 
 	void guardGate();
+	virtual void attack(std::string const & target);
 
-	private:
+private:
 	bool _guard;
 	
 };

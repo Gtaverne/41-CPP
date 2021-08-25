@@ -10,12 +10,12 @@ public:
 	ClapTrap(void);
 	ClapTrap(std::string name);
 	ClapTrap (ClapTrap const &input);
-	~ClapTrap(void);
-	ClapTrap & operator=(ClapTrap const & rhs);
+	virtual ~ClapTrap(void);
+	virtual ClapTrap & operator=(ClapTrap const & rhs);
 
-	void attack(std::string const & target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+	virtual void attack(std::string const & target);
+	virtual void takeDamage(unsigned int amount);
+	virtual void beRepaired(unsigned int amount);
 
 	std::string getName (void) const;
 	int getHP (void) const;
