@@ -15,6 +15,8 @@ public:
 
 	void guardGate();
 	virtual void attack(std::string const & target);
+	bool getGuardstatus(void) const;
+	void setGuardstatus(bool);
 
 private:
 	bool _guard;

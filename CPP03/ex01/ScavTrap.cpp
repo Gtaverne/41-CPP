@@ -2,6 +2,7 @@
 
 ScavTrap::ScavTrap(void) : _guard(false)
 {
+	std::cout << "Creation of a nameless ScavTrap" << std::endl;
 	_hp = 100;
 	_mp = 50;
 	_atk = 20;
@@ -9,6 +10,7 @@ ScavTrap::ScavTrap(void) : _guard(false)
 
 ScavTrap::ScavTrap(std::string const & name) : ClapTrap::ClapTrap(name), _guard(false)
 {
+	std::cout << "Creation of a ScavTrap : " << _name << std::endl;
 	_hp = 100;
 	_mp = 50;
 	_atk = 20;
@@ -28,17 +30,33 @@ ScavTrap::~ScavTrap(void)
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
 {
-	ClapTrap::setName(rhs.getName());
-	ClapTrap::setHP(rhs.getHP());
-	ClapTrap::setMP(rhs.getMP());
-	ClapTrap::setATK(rhs.getATK());
+	setName(rhs.getName());
+	setHP(rhs.getHP());
+	setMP(rhs.getMP());
+	setATK(rhs.getATK());
+	
+	setGuardstatus(rhs.getGuardstatus());
+	
 	return *this;
 }
 
 void ScavTrap::attack(std::string const & target)
 {
-	std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _atk << " points of damage !" << std::endl;
+	std::cout << "ScavTrap " << _name << " is hitting hard " << target << ", causing " << _atk << " points of damage !" << std::endl;
 }
 
+bool ScavTrap::getGuardstatus(void)
+{
+	return (this->_guard);
+}
 
-void guardGate();
+void ScavTrap::setGuardstatus(bool in)
+{
+	this->_guard = in;
+}
+
+void ScavTrap::guardGate()
+{
+	std::cout << "ScavTrap " << _name << " has entered Gate keeper mode" << std::endl;
+	_guard = true;
+}
