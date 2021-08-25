@@ -1,8 +1,8 @@
 NAME	=	Diamond
 CC		=	clang++
-HEADER	=	ClapTrap.hpp FragTrap.hpp DiamondTrap.hpp
+HEADER	=	ClapTrap.hpp FragTrap.hpp ScavTrap.hpp DiamondTrap.hpp
 OBJDIR	=	obj
-SRC		=	main.cpp ClapTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SRC		=	main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98

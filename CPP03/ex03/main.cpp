@@ -10,7 +10,7 @@ int main(void)
 	Frag1.takeDamage(5);
 	Frag1.beRepaired(1000);
 	std::cout << "------------" << std::endl;
-	std::cout << "Rien n'a ete redefini, ce sont bien les fonctions du claptrap" << std::endl;
+	std::cout << "attack provient de ScavTrap, le reste est le defaut claptrap" << std::endl;
 	std::cout << "------------" << std::endl;
 
 	std::cout << std::endl << "------------" << std::endl;
@@ -22,6 +22,7 @@ int main(void)
 	Frag3 = Frag2;
 	Frag3.setName("Frag3");
 	Frag3.takeDamage(100);
+	Frag3.guardGate();
 
 	Frag1.highFivesGuys();
 

@@ -3,17 +3,21 @@
 DiamondTrap::DiamondTrap(void) : ClapTrap::ClapTrap(), ScavTrap::ScavTrap(), FragTrap::FragTrap()
 {
 	std::cout << "Creation of a nameless DiamondTrap" << std::endl;
+	_name = "Nameless";
+	setName(getName() + "_clap_name");
 	_hp = 100;
 	_mp = 50;
-	_atk = 20;
+	_atk = 30;
 }
 
 DiamondTrap::DiamondTrap(std::string const & name) : ClapTrap::ClapTrap(name), ScavTrap::ScavTrap(name), FragTrap::FragTrap(name)
 {
+	_name = name;
 	std::cout << "Creation of a DiamondTrap : " << _name << std::endl;
+	setName(getName() + "_clap_name");
 	_hp = 100;
 	_mp = 50;
-	_atk = 20;
+	_atk = 30;
 }
 
 DiamondTrap::DiamondTrap (DiamondTrap const &input)
@@ -24,7 +28,7 @@ DiamondTrap::DiamondTrap (DiamondTrap const &input)
 
 DiamondTrap::~DiamondTrap(void)
 {
-	std::cout << "Destruction of a Scavtrap : " << _name << std::endl;
+	std::cout << "Destruction of a Diamondtrap : " << _name << std::endl;
 
 }
 
