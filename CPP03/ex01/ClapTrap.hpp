@@ -5,7 +5,7 @@
 
 class ClapTrap
 {
-	public:
+public:
 	//canon
 	ClapTrap(void);
 	ClapTrap(std::string name);
@@ -22,11 +22,12 @@ class ClapTrap
 	int getMP (void) const;
 	int getATK (void) const;
 
+	void setName (std::string);
 	void setHP (int);
 	void setMP (int);
 	void setATK (int);
 
-	private:
+protected:
 	std::string _name;
 	int _hp;
 	int _mp;

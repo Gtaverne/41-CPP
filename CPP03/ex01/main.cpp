@@ -1,8 +1,8 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-	ClapTrap Claque("Trapos");
+	ScavTrap Claque("Serena");
 	Claque.attack("Bob");
 	Claque.takeDamage(5);
 	Claque.beRepaired(1000);

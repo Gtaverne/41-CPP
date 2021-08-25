@@ -1,14 +1,14 @@
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-# include "Fixed.hpp"
+# include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap : public ClapTrap
 {
 	public:
 	//canon
 	ScavTrap(void);
-	ScavTrap(std::string name);
+	ScavTrap(std::string const & name);
 	ScavTrap (ScavTrap const &input);
 	~ScavTrap(void);
 	ScavTrap & operator=(ScavTrap const & rhs);
@@ -16,6 +16,7 @@ class ScavTrap
 	void guardGate();
 
 	private:
+	bool _guard;
 	
 };
 

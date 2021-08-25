@@ -5,15 +5,19 @@
 ClapTrap::ClapTrap(void) : _hp(10), _mp(10), _atk(0)
 {
 	_name = "Unknown";
+	std::cout << "Default creation of a Claptrap : " << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _hp(10), _mp(10), _atk(0)
 {
 	this->_name = name;
+	std::cout << "Creation of a Claptrap : " << _name << std::endl;
+
 }
 
 ClapTrap::~ClapTrap(void)
 {
+	std::cout << "Destruction of a Claptrap : " << _name << std::endl;
 }
 
 ClapTrap::ClapTrap (ClapTrap const &input)
@@ -23,7 +27,7 @@ ClapTrap::ClapTrap (ClapTrap const &input)
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "ClapTrap assignation operator called" << std::endl;
 	this->_name = rhs.getName();
 	this->_hp = rhs.getHP();
 	this->_mp = rhs.getMP();
@@ -67,6 +71,11 @@ int ClapTrap::getMP (void) const
 int ClapTrap::getATK (void) const
 {
 	return this->_atk;
+}
+
+void ClapTrap::setName (std::string str)
+{
+	this->_name = str;
 }
 
 void ClapTrap::setHP (int hp)

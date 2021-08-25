@@ -1,8 +1,8 @@
 NAME	=	Serena
 CC		=	clang++
-HEADER	=	ClapTrap.hpp
+HEADER	=	ClapTrap.hpp ScavTrap.hpp
 OBJDIR	=	obj
-SRC		=	main.cpp ClapTrap.cpp
+SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp 
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
