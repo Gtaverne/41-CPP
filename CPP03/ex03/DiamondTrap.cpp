@@ -43,3 +43,9 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs)
 	
 	return *this;
 }
+
+
+void DiamondTrap::whoAmI(void) {
+	std::cout << "Hi, my name is : " << _name << ", I am a : " << getName() << std::endl;
+
+}

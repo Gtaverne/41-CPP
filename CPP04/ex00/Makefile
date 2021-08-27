@@ -1,8 +1,8 @@
-NAME	=	Diamond
+NAME	=	polymorphism
 CC		=	clang++
-HEADER	=	ClapTrap.hpp FragTrap.hpp ScavTrap.hpp DiamondTrap.hpp
+HEADER	=	Animal.hpp
 OBJDIR	=	obj
-SRC		=	main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
+SRC		=	main.cpp Animal.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98  -Wno-shadow 
@@ -11,7 +11,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "Ca compile \\o/ \nL'util s'appelle Diamond\n"
+	@echo "Ca compile \\o/ \nL'util s'appelle ./polymorphism\n"
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p obj

@@ -25,6 +25,7 @@ int main(void)
 	Frag3.guardGate();
 
 	Frag1.highFivesGuys();
+	Frag1.whoAmI();
 
 	return 0;
 }
