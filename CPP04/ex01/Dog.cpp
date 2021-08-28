@@ -4,24 +4,25 @@
 Dog::Dog(void) {
 	std::cout << "A new brainy Dog has been created" << std::endl;
 	_type = "Dog";
-	_dogBrain = new Brain;
+	_DogBrain = new Brain;
 }
 
 Dog::Dog(Dog const &input) {
 	std::cout << "You copied a Dog" << std::endl;
+	_DogBrain = new Brain(*input._DogBrain);
 	*this = input;
 }
 
 Dog::~Dog(void) {
-	delete _dogBrain;
-	std::cout << "You killed a Dog, curse you" << std::endl;
+	delete _DogBrain;
+	std::cout << "You killed a Dog, that's bad for karma" << std::endl;
 }
 
 Dog & Dog::operator= (Dog const & rhs)
 {
 	_type = rhs.getType();
-	delete _dogBrain;
-	_dogBrain =  new Brain(*rhs._dogBrain);
+	delete _DogBrain;
+	_DogBrain =  new Brain(*rhs._DogBrain);
 	return *this;
 }
 
@@ -34,7 +35,15 @@ void Dog::setType(std::string const newtype) {
 	_type = newtype ;
 }
 
+void Dog::setDogIdea(int i, std::string const idea) {
+	_DogBrain->setIdea(i, idea);
+}
+
+std::string Dog::getDogIdea(int i) const {
+	return _DogBrain->getIdea(i);
+}
+
 //Member function
 void Dog::makeSound() const {
-	std::cout << getType() << " : Woof wooooooooof <3" << std::endl;
+	std::cout << getType() << " : meow, meow, MEOW" << std::endl;
 }
