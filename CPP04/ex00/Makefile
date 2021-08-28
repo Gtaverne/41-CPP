@@ -1,11 +1,11 @@
 NAME	=	polymorphism
 CC		=	clang++
-HEADER	=	Animal.hpp
+HEADER	=	Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 OBJDIR	=	obj
-SRC		=	main.cpp Animal.cpp
+SRC		=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98  -Wno-shadow 
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
