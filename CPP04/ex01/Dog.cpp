@@ -2,8 +2,9 @@
 
 //Canon
 Dog::Dog(void) {
-	std::cout << "A new Dog has been created" << std::endl;
+	std::cout << "A new brainy Dog has been created" << std::endl;
 	_type = "Dog";
+	_dogBrain = new Brain;
 }
 
 Dog::Dog(Dog const &input) {
@@ -12,12 +13,15 @@ Dog::Dog(Dog const &input) {
 }
 
 Dog::~Dog(void) {
-	std::cout << "You killed a Dog, you monster" << std::endl;
+	delete _dogBrain;
+	std::cout << "You killed a Dog, curse you" << std::endl;
 }
 
 Dog & Dog::operator= (Dog const & rhs)
 {
 	_type = rhs.getType();
+	delete _dogBrain;
+	_dogBrain =  new Brain(*rhs._dogBrain);
 	return *this;
 }
 
@@ -31,6 +35,6 @@ void Dog::setType(std::string const newtype) {
 }
 
 //Member function
-void Dog::makeSound() const{
-	std::cout << getType() << " : wouf, wouf <3" << std::endl;
+void Dog::makeSound() const {
+	std::cout << getType() << " : Woof wooooooooof <3" << std::endl;
 }

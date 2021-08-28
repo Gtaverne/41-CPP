@@ -3,6 +3,7 @@
 
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal {
 public:
@@ -16,9 +17,12 @@ public:
 
 	virtual std::string getType(void) const;
 	virtual void setType(std::string const newtype);
+	std::string getCatIdea(int) const;
+	void setCatIdea(int const i, std::string const idea);
 
 protected:
 	std::string _type;
+	Brain* _catBrain;
 };
 
 #endif

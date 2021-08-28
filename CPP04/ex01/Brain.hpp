@@ -12,10 +12,9 @@ public:
 	virtual ~Brain(void);
 	virtual Brain & operator= (Brain const & rhs);
 
-	virtual std::string getType(void) const;
-	virtual void setType(std::string const newtype);
+	void setIdea(int const i, std::string const str);
+	std::string getIdea(int const i) const;
 
-	virtual void makeSound() const;
 
 protected:
 	std::string _ideas[100];

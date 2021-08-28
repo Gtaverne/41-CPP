@@ -7,26 +7,48 @@
 int main()
 {
 	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	std::cout << j->getType() << " (to check the type of j)" << std::endl;
+	const Animal* j = new Dog();
 	std::cout << i->getType() << " (to check the type of i)" << std::endl;
+	std::cout << j->getType() << " (to check the type of j)" << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
 
+
 	std::cout << std::endl;
-	std::cout << "---And the wrong ones---" << std::endl;
-	const WrongAnimal* k = new WrongAnimal();
-	const WrongAnimal* l = new WrongCat();
-	k->makeSound(); //will output the wrong animal sound!
-	l->makeSound();
+	std::cout << "---More tests---" << std::endl;
+	{
+		const Cat* k = new Cat();
+		Cat miaouss;
+		Cat Bob;
+		miaouss.makeSound();
+		std::cout << "What is miaouss: a " << miaouss.getType() << std::endl;
+		miaouss.setType("Not a cat");
+		std::cout << "What is miaouss now: " << miaouss.getType() << std::endl;
+		miaouss = Bob;
+		miaouss.makeSound();
+		std::cout << "What about now: " << miaouss.getType() << std::endl << std::endl;
+		Cat Bill(*k);
+		std::cout << "---Slaughter time---" << std::endl;
+		delete k;
+	}
+
+	std::cout << std::endl;
+	std::cout << "---Even more tests---" << std::endl;
+	{
+		Cat miaouss;
+		for (int n = 0; n < 5; n++)
+			std::cout << miaouss.getCatIdea(n) << std::endl;
+		miaouss.setCatIdea(2, "I want pikachu");
+		std::cout << "Miaouss got a new idea" << std::endl;
+		for (int n = 0; n < 5; n++)
+			std::cout << miaouss.getCatIdea(n) << std::endl;
+	}
 
 	std::cout << std::endl;
 	std::cout << "---Slaughter time---" << std::endl;
 	delete meta;
 	delete i;
 	delete j;
-	delete k;
-	delete l;
 }

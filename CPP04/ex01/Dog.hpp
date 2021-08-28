@@ -3,6 +3,7 @@
 
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal {
 public:
@@ -19,6 +20,7 @@ public:
 
 protected:
 	std::string _type;
+	Brain *_dogBrain;
 };
 
 #endif

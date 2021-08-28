@@ -2,35 +2,37 @@
 
 //Canon
 Brain::Brain(void) {
+	for (int i = 0 ; i < 100; i++)
+	{
+		_ideas[i] = "Idea ";  
+	}
 	std::cout << "A new Brain has been created" << std::endl;
-	_type = "None";
 }
 
 Brain::Brain(Brain const &input) {
-	std::cout << "You copied an Brain" << std::endl;
+	std::cout << "You copied a Brain" << std::endl;
 	*this = input;
 }
 
 Brain::~Brain(void) {
-	std::cout << "You killed an Brain :-(" << std::endl;
+	std::cout << "A brain has been fried" << std::endl;
 }
 
 Brain & Brain::operator= (Brain const & rhs)
 {
-	_type = rhs.getType();
+	for (int i = 0; i < 100 ; i++)
+		_ideas[i] = rhs._ideas[i];
 	return *this;
 }
 
-//Setter & getter
-std::string Brain::getType(void) const {
-	return _type ;
+
+// getter and setter
+void Brain::setIdea(int const i, std::string const str)
+{
+	_ideas[i] = str;
 }
 
-void Brain::setType(std::string const newtype) {
-	_type = newtype ;
-}
-
-//Member function
-void Brain::makeSound() const {
-	std::cout << getType() << ": for now, I have nothing to say" << std::endl;
+std::string Brain::getIdea(int const i) const
+{
+	return _ideas[i];
 }
