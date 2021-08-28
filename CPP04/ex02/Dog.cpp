@@ -45,5 +45,5 @@ std::string Dog::getDogIdea(int i) const {
 
 //Member function
 void Dog::makeSound() const {
-	std::cout << getType() << " : Wooh wooh <3" << std::endl;
+	std::cout << getType() << " : Wooh wooh" << std::endl;
 }
