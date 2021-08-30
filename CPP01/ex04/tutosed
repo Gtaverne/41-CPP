@@ -5,7 +5,7 @@ sed 's/<STR1>/<STR2>/' <source file> > <source file>.replace
 To test my sed
 make re && ./sed_mkay tutosed and AND 
 
-Alsom some more text her to practice:
+Also some more text her to practice:
 
 Lobsters are a family (Nephropidae, sometimes also Homeridae) of large marine crustaceans.
 

@@ -1,17 +1,17 @@
 #include "mkay.hpp"
 
 
-wellsed::wellsed(std::string input, std::string o, std::string n): _input(input), _tofind(o), _toreplace(n)
+Wellsed::Wellsed(std::string input, std::string o, std::string n): _input(input), _tofind(o), _toreplace(n)
 {
 	_output = input + ".replace";
 }
 
-wellsed::~wellsed()
+Wellsed::~Wellsed()
 {
 
 }
 
-bool wellsed::test(void)
+bool Wellsed::test(void)
 {
 	if (_tofind[0] == 0)
 	{
@@ -36,7 +36,7 @@ bool wellsed::test(void)
 }
 
 
-void wellsed::rockit(void)
+void Wellsed::rockit(void)
 {
 	std::string line;
 	while(getline(reader, line))
@@ -54,9 +54,21 @@ void wellsed::rockit(void)
 		return ;
 	}
 	std::size_t position;
+	/*Explanations:
+	str.find(_tofind)	: will find _tofind in str and give its FIRST position
+	std::string::npos	: understand it as "EOF"
+	str.substr (i,j)	: in str, it will take the substring starting at position i, of length j
+	_temp.length()		: this is strlen(_temp)
+	
+	So the algo is :
+	While there is occurences of _tofind
+		1- we append to te result everything that was in _temp until the first occurence of _tofind + _toreplace
+		2- we remove from _temp what we already added to _result plus the _tofind
+	We concatenate the end of _temp to _result
+	We write _result in writer
+	*/
 	while ((position = _temp.find(_tofind)) != std::string::npos)
 	{
-		
 		_result = _result + _temp.substr(0, position) + _toreplace;
 		_temp = _temp.substr(position + _tofind.length(), _temp.length());
 	}

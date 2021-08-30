@@ -1,14 +1,16 @@
 #ifndef MKAY_HPP
 # define MKAY_HPP
 
+/* fstream is used to open/close */
+
 #include <iostream>
 #include <fstream>
 
 
-class wellsed {
+class Wellsed {
 	public:
-	wellsed(std::string, std::string, std::string);
-	~wellsed();
+	Wellsed(std::string, std::string, std::string);
+	~Wellsed();
 	bool test();
 	void rockit();
 

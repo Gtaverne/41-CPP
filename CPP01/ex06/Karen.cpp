@@ -39,7 +39,6 @@ void Karen::complain(std::string input)
 	const char *possibilities[4] = { "DEBUG", "INFO", "WARNING", "ERROR"};
 	void	(Karen::*Vectorfunc)(void);
 	int res = 0;
-	//faire un while qui pue
 	while (res < 4 && input != possibilities[res])
 		res++;
 

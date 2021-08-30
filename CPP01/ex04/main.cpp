@@ -7,7 +7,7 @@ int main (int ac, char **av)
 		std::cout << "Wrong arguments" << std::endl << "Enter arguments FILENAME STR1 STR2" << std::endl;
 		return (1);
 	}
-	wellsed sed(av[1], av[2], av[3]);
+	Wellsed sed(av[1], av[2], av[3]);
 	if (sed.test())
 	{
 		sed.rockit();

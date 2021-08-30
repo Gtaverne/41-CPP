@@ -13,7 +13,7 @@ bonus: all
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "Ca compile \\o/ \n"
+	@echo "Ca compile \\o/ L'exec s'appelle ./hordedort\n"
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p obj

@@ -9,5 +9,6 @@ int main ()
 	amedee->announce();
 	randomChump("Arsene");
 	delete amedee;
+	std::cout << "Everything is already clean by now" << std::endl;
 	return (0);
 }

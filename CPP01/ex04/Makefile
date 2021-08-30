@@ -13,7 +13,7 @@ bonus: all
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "Ca compile \\o/ \nL'util s'appelle sed_mkay\n"
+	@echo "Ca compile \\o/ \nL'util s'appelle ./sed_mkay\n"
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p obj

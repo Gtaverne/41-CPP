@@ -12,7 +12,7 @@ int main ()
 	{
 		horde[i].announce();
 	}
-	std::cout << "ENOUGH OF THEM" << std::endl;
+	std::cout << std::endl << "ENOUGH OF THEM" << std::endl;
 	hordcrusher(horde);
 	std::cout << "Good riddance" << std::endl;
 }
