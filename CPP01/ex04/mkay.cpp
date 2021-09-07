@@ -18,13 +18,13 @@ bool Wellsed::test(void)
 		std::cout << "STR1 is empty, we wont replace anything" << std::endl;
 		return (0);
 	}
-	reader.open(_input);
+	reader.open(_input.c_str());
 	if (!reader.is_open())
 	{
 		std::cout << "Error: could not open \"" << _input << "\"" << std::endl;
 		return (0);
 	}
-	writer.open(_output);
+	writer.open(_output.c_str());
 	if (!writer.is_open())
 	{
 		std::cout << "Error: could not write in \"" << _output << "\"" << std::endl;

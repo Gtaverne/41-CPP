@@ -1,9 +1,9 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(void)
+//Canon
+Fixed::Fixed(void) : _valfix(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-	_valfix = 0;
 }
 
 Fixed::~Fixed(void)
@@ -17,6 +17,14 @@ Fixed::Fixed (Fixed const &input)
 	*this = input;
 }
 
+Fixed & Fixed::operator=(Fixed const & right)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	this->_valfix = right.getRawBits();
+	return *this;
+}
+
+//Setter & getter
 int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
@@ -29,9 +37,3 @@ void Fixed::setRawBits(int const raw)
 	this->_valfix = raw;
 }
 
-Fixed & Fixed::operator=(Fixed const & right)
-{
-	std::cout << "Assignation operator called" << std::endl;
-	this->_valfix = right.getRawBits();
-	return *this;
-}

@@ -1,5 +1,6 @@
 #include "Fixed.hpp"
 
+//Canon
 Fixed::Fixed(void)
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -17,6 +18,13 @@ Fixed::Fixed (Fixed const &input)
 	*this = input;
 }
 
+Fixed & Fixed::operator=(Fixed const & rhs)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	this->_valfix = rhs.getRawBits();
+	return *this;
+}
+
 Fixed::Fixed (int const val)
 {
 	std::cout << "Int constructor called" << std::endl;	
@@ -29,6 +37,7 @@ Fixed::Fixed (float const val)
 	_valfix = roundf(val * ( 1 << _nb));
 }
 
+//Setters and getters
 int Fixed::getRawBits(void) const
 {
 	return this->_valfix;
@@ -39,13 +48,7 @@ void Fixed::setRawBits(int const raw)
 	this->_valfix = raw;
 }
 
-Fixed & Fixed::operator=(Fixed const & rhs)
-{
-	std::cout << "Assignation operator called" << std::endl;
-	this->_valfix = rhs.getRawBits();
-	return *this;
-}
-
+//Member functions
 float Fixed::toFloat(void) const
 {
 	return (roundf(_valfix) / (1 << _nb));
@@ -56,6 +59,7 @@ int Fixed::toInt(void) const
 	return _valfix >> _nb;
 }
 
+//Global functions
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs)
 {
 	o << rhs.toFloat();

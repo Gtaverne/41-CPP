@@ -5,7 +5,7 @@ int main ()
 	int N = 12;
 	Zombie *horde;
 
-	std::cout << "Let us creat a hord of Rogers" << std::endl;
+	std::cout << "Let us create a hord of Rogers" << std::endl;
 	horde = zombieHorde(N, "Roger");
 
 	for (int i = 0; i < N; i++)

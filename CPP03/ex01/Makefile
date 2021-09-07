@@ -19,6 +19,7 @@ $(OBJDIR)/%.o: %.cpp
 
 clean:
 	@rm -f $(OBJ)
+	@rm -rf obj
 
 fclean: clean
 	@rm -f $(NAME)

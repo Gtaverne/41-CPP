@@ -1,6 +1,6 @@
 #include "Fixed.hpp"
 
-//The canon and assignations
+//The canon
 
 Fixed::Fixed(void)
 {
@@ -26,9 +26,14 @@ Fixed::Fixed (float const val)
 	_valfix = roundf(val * ( 1 << _nb));
 }
 
+Fixed & Fixed::operator=(Fixed const & rhs)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	this->_valfix = rhs.getRawBits();
+	return *this;
+}
 
-
-//Basic manipulations
+//Setters and getters
 
 int Fixed::getRawBits(void) const
 {
@@ -40,13 +45,7 @@ void Fixed::setRawBits(int const raw)
 	this->_valfix = raw;
 }
 
-Fixed & Fixed::operator=(Fixed const & rhs)
-{
-	std::cout << "Assignation operator called" << std::endl;
-	this->_valfix = rhs.getRawBits();
-	return *this;
-}
-
+//Simple functions
 float Fixed::toFloat(void) const
 {
 	return (roundf(_valfix) / (1 << _nb));
@@ -78,6 +77,7 @@ Fixed Fixed::operator/(Fixed const & rhs) const
 	return(Fixed(toFloat() / rhs.toFloat()));
 }
 
+//Iterators
 Fixed & Fixed::operator++(void)
 {
 	_valfix++;
@@ -103,7 +103,6 @@ Fixed Fixed::operator--(int)
 	_valfix--;
 	return tmp;
 }
-
 
 bool Fixed::operator>(Fixed const & rhs) const
 {

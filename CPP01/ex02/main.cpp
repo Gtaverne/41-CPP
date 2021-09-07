@@ -10,5 +10,8 @@ int main()
 	stringptr = &source;
 
 	std::cout << stringref << std::endl;
+	std::cout << &stringref << std::endl;
+
 	std::cout << *stringptr << std::endl;
+	std::cout << stringptr << std::endl;
 }

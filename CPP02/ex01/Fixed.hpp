@@ -6,17 +6,19 @@
 
 class Fixed
 {
-	public:
+public:
+//canon
 	Fixed(void);
 	~Fixed(void);
 	Fixed(const Fixed& input);
+	Fixed & operator=(Fixed const & rhs);
 	
 	Fixed (int const val);
 	Fixed (float const val);
+	
+//Setter & getter
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
-
-	Fixed & operator=(Fixed const & rhs);
 
 	int toInt(void) const;
 	float toFloat(void) const;

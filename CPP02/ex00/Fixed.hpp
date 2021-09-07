@@ -5,16 +5,17 @@
 
 class Fixed
 {
-	public:
+public:
+//Canon	
 	Fixed(void);
 	~Fixed(void);
 	Fixed(const Fixed&);
+	Fixed & operator=(Fixed const & right);
+
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 
-	Fixed & operator=(Fixed const & right);
-
-	private:
+private:
 	int _valfix;
 	static int const _nb = 8;
 };
