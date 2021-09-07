@@ -29,18 +29,10 @@ std::string const & AMateria::getType() const
 	return _materia_type;
 }
 
-void AMateria::SetType(std::string &const src)
-{
-	_materia_type = src;
-}
-
-
-
-
 //Class functions
 void AMateria::AMateria::use(ICharacter& target)
 {
-
+	
 }
 
 
