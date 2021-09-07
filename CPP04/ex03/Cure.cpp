@@ -20,7 +20,7 @@ Cure & Cure::operator=(Cure const & rhs)
 
 Cure::~Cure()
 {
-	std::cout << "Materia "<< _materia_type << " destructed" << std::endl;
+	std::cout << "CURE DESTRUCTOR" << std::endl;
 }
 
 //Class functions

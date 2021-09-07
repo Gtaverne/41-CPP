@@ -19,8 +19,12 @@ int main()
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	std::cout << "---We kill bob---" << std::endl;
 	delete bob;
+	std::cout << "---We kill me---" << std::endl;
 	delete me;
+	std::cout << "---We kill src---" << std::endl;
 	delete src;
+	std::cout << "---We are done---" << std::endl;
 	return 0;
 }

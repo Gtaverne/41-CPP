@@ -20,7 +20,7 @@ Ice & Ice::operator=(Ice const & rhs)
 
 Ice::~Ice()
 {
-	std::cout << "Materia "<< _materia_type << " destructed" << std::endl;
+	std::cout << "ICE DESTRUCTOR" << std::endl;
 }
 
 //Class functions
