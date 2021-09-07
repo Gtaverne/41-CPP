@@ -1,8 +1,8 @@
 NAME	=	materia
 CC		=	clang++
-HEADER	=	AMateria.hpp
+HEADER	=	AMateria.hpp IMateria.hpp Character.hpp Ice.hpp Cure.hpp IMateriaSource.hpp MateriaSource.hpp
 OBJDIR	=	obj
-SRC		=	main.cpp AAMateria.cpp
+SRC		=	main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address

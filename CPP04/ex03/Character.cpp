@@ -1,10 +1,12 @@
 #include "Character.hpp"
 
 //Canon
-Character::Character()
+Character::Character(void)
 {
 	_name = "Anonymous";
 	std::cout << "An anonymous character has arrived" << std::endl;
+	for (int i = 0; i < 4; i++)
+		_mat_inventory[i] = NULL;
 }
 
 Character::Character(Character const & src)
@@ -45,6 +47,13 @@ std::string const & Character::getName() const
 }
 
 //Class function
+Character::Character(std::string name) : _name(name)
+{
+	for (int i = 0; i < 4; i++)
+		_mat_inventory[i] = NULL;
+	std::cout << "A new character has entered the game: " << name << std::endl;
+}
+
 void Character::use(int idx, ICharacter& target) {
 	if (idx < 0 || idx > 3 || _mat_inventory[idx] == NULL)
 	{

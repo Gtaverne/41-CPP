@@ -17,6 +17,7 @@ public:
 	std::string const & getName() const;
 
 //Class functions
+	Character(std::string name);
 	void use(int idx, ICharacter& target);
 	void equip(AMateria *m);
 	void unequip(int idx);

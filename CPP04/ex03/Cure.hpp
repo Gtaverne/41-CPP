@@ -1,5 +1,5 @@
-#ifndef Cure_HPP
-# define Cure_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
 #include <iostream>
 #include "AMateria.hpp"
@@ -13,16 +13,10 @@ public:
 	Cure & operator=(Cure const & rhs);
 	virtual ~Cure();
 
-//Getter and setters
-	std::string const & getName() const;
-
 //Class functions
-	void use(int idx, ICharacter& target);
-	void equip(AMateria *m);
-	void unequip(int idx);
-
-protected:
-	
+	Cure(std::string const & type);
+	void use(ICharacter& target);
+	AMateria* clone() const;
 };
 
 #endif

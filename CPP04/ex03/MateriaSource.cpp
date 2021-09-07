@@ -5,7 +5,7 @@ MateriaSource::MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
 		_materia_source[i] = NULL;
-	std::cout << "New default source created" << std::endl;
+	std::cout << "New source created" << std::endl;
 }
 
 MateriaSource::MateriaSource(MateriaSource const & src)
@@ -52,10 +52,9 @@ void MateriaSource::learnMateria(AMateria* src)
 {
 	int index = 0;
 
-	while (index < 4)
+	while (index < 4 && _materia_source[index] != NULL)
 	{
-		if (_materia_source[index++] != NULL)
-			break;
+		index++;
 	}
 	if (index == 4)
 		std::cout << "The source is full it's not possible to add another materia" << std::endl;
