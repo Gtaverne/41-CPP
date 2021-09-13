@@ -1,8 +1,8 @@
-NAME	=	materia
+NAME	=	newoffice
 CC		=	clang++
-HEADER	=	AMateria.hpp IMateria.hpp Character.hpp Ice.hpp Cure.hpp IMateriaSource.hpp MateriaSource.hpp
+HEADER	=	Bureaucrat.hpp
 OBJDIR	=	obj
-SRC		=	main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+SRC		=	main.cpp Bureaucrat.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address

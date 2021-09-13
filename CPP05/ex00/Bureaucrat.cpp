@@ -8,12 +8,12 @@ Bureaucrat::Bureaucrat() : _name("Nameless dude"), 	_rank(150)
 
 Bureaucrat::Bureaucrat(Bureaucrat const & src) : _name(src.getName()), _rank(src.getGrade())
 {
-	std::cout << _name << "has been created by copy, with grade " << _rank << std::endl;
+	std::cout << _name << " has been created by copy, with grade " << _rank << std::endl;
 }
 
-Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs)
+Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs) 
 {
-	//_name = rhs.getName();
+	std::cout << this->getName() << " has been assigned the same grade as " << rhs.getName() << std::endl;
 	_rank = rhs.getGrade();
 	return *this;
 }
@@ -22,12 +22,20 @@ Bureaucrat::~Bureaucrat()
 {
 }
 
+Bureaucrat::Bureaucrat(std::string name, int rank) : _name(name), _rank(rank)
+{
+	std::cout << _name << " has been created, with grade " << _rank << std::endl;
+	if (_rank < 0)
+		throw Bureaucrat::GradeTooHighException();
+	if (_rank >150)
+		throw Bureaucrat::GradeTooLowException();	
+}
+
 //Getters and setters
 const std::string Bureaucrat::getName(void) const
 {
 	return (_name);
 }
-
 
 int Bureaucrat::getGrade(void) const
 {
@@ -36,11 +44,16 @@ int Bureaucrat::getGrade(void) const
 
 void Bureaucrat::gradePromotion(void)
 {
-	_rank++;
+	if (_rank > 0)
+		_rank--;
+	else
+		throw Bureaucrat::GradeTooHighException();	
 }
 
 void Bureaucrat::gradeSanction(void)
 {
-	_rank--;
+	if (_rank < 150)
+		_rank++;
+	else
+		throw Bureaucrat::GradeTooLowException();	
 }
-

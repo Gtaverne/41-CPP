@@ -31,7 +31,7 @@ public:
 	Bureaucrat & operator=(Bureaucrat const & rhs);
 	virtual ~Bureaucrat();
 
-	Bureaucrat(int rank);
+	Bureaucrat(std::string name, int rank);
 
 //Getters and setters
 	const std::string getName(void) const;
