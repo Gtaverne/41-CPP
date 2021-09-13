@@ -11,7 +11,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "Ca compile \\o/ \nL'util s'appelle ex2\n"
+	@echo "Ca compile \\o/ \nL'util s'appelle $(NAME)\n"
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p obj

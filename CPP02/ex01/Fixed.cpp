@@ -48,7 +48,7 @@ void Fixed::setRawBits(int const raw)
 	this->_valfix = raw;
 }
 
-//Member functions
+//Class functions
 float Fixed::toFloat(void) const
 {
 	return (roundf(_valfix) / (1 << _nb));

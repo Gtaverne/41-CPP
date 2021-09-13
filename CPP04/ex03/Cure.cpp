@@ -4,7 +4,7 @@
 Cure::Cure()
 {
 	_materia_type = "cure";
-	std::cout << "Cure materia created" << std::endl;
+	std::cout << "The materia is actually a cure" << std::endl;
 }
 
 Cure::Cure(Cure const & src)

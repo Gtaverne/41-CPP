@@ -4,7 +4,7 @@
 Ice::Ice()
 {
 	_materia_type = "ice";
-	std::cout << "Ice materia created" << std::endl;
+	std::cout << "In fact, it's an ice materia" << std::endl;
 }
 
 Ice::Ice(Ice const & src)

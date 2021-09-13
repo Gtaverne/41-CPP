@@ -7,7 +7,8 @@
 
 class Point
 {
-	public:
+public:
+//Canon
 	Point(void);
 	~Point(void);
 	Point(const Point &pt);

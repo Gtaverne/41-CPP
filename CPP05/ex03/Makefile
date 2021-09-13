@@ -1,6 +1,6 @@
-NAME	=	materia
+NAME	=	basicbureaucrat
 CC		=	clang++
-HEADER	=	AMateria.hpp IMateria.hpp Character.hpp Ice.hpp Cure.hpp IMateriaSource.hpp MateriaSource.hpp
+HEADER	=	
 OBJDIR	=	obj
 SRC		=	main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 

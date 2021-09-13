@@ -12,6 +12,7 @@ public:
 	Fixed(const Fixed&);
 	Fixed & operator=(Fixed const & right);
 
+//Getter and setter
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 

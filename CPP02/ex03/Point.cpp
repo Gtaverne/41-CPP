@@ -1,6 +1,5 @@
 #include "Point.hpp"
 
-
 //Canon
 Point::Point(void) :  _x(0), _y(0)
 {

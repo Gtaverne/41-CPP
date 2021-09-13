@@ -20,6 +20,7 @@ public:
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 
+//Class function
 	int toInt(void) const;
 	float toFloat(void) const;
 

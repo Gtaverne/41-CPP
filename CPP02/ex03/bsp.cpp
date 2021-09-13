@@ -13,6 +13,7 @@ bool bsp (Point const a, Point const b, Point const c, Point const point)
 	Fixed d1, d2, d3;
 	bool has_neg, has_pos;
 
+
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
