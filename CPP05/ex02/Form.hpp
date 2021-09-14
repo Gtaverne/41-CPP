@@ -1,5 +1,5 @@
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef Form_HPP
+# define Form_HPP
 
 # include "Bureaucrat.hpp"
 
@@ -24,6 +24,14 @@ public:
 				return ("The grade is too low! (No grade can be above 150)");
 			}
 	};
+
+	class UnsignedFormException: public std::exception{
+		public:
+			virtual const char* what() const throw()
+			{
+				return ("The form has not been signed. Find someone to do it");
+			}
+	};
 	
 
 //Canon
@@ -44,6 +52,7 @@ public:
 
 //Class functions
 	void beSigned(Bureaucrat bob);
+	virtual void execute (Bureaucrat const & executor) const = 0;
 
 private:
 	std::string const _formName;

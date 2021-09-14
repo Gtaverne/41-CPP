@@ -8,7 +8,7 @@ int main()
 	Form b("Order 66", 5, 50);
 	a = b;
 
-	Bureaucrat bob("Bob", 10);
+	Bureaucrat bob("Bob", 50);
 	Bureaucrat god("God", 1);
 
 	{
@@ -46,6 +46,38 @@ int main()
 		{
 			b.beSigned(god);
 			std::cout << b << std::endl;
+		}
+		catch (Form::GradeTooLowException & e) {
+			std::cout << e.what() << std::endl;
+		}
+		catch (Form::GradeTooHighException & e) {
+			std::cout << e.what() << std::endl;
+		}
+	}
+
+	{
+		std::cout << std::endl << "Now we test signForm" << std::endl;
+		try
+		{
+			Form hl("Table of law", 5, 7);
+			bob.signForm(&hl);
+			std::cout << hl << std::endl;
+		}
+		catch (Form::GradeTooLowException & e) {
+			std::cout << e.what() << std::endl;
+		}
+		catch (Form::GradeTooHighException & e) {
+			std::cout << e.what() << std::endl;
+		}
+	}
+
+	{
+		std::cout << std::endl << "God can signForm" << std::endl;
+		try
+		{
+			Form hl("Table of law", 5, 7);
+			god.signForm(&hl);
+			std::cout << hl << std::endl;
 		}
 		catch (Form::GradeTooLowException & e) {
 			std::cout << e.what() << std::endl;
