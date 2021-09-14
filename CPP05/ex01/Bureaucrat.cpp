@@ -25,7 +25,7 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat::Bureaucrat(std::string name, int rank) : _name(name), _rank(rank)
 {
 	std::cout << _name << " has been created, with grade " << _rank << std::endl;
-	if (_rank < 1)
+	if (_rank < 0)
 		throw Bureaucrat::GradeTooHighException();
 	if (_rank >150)
 		throw Bureaucrat::GradeTooLowException();	
@@ -72,6 +72,6 @@ void Bureaucrat::gradeSanction(void)
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs)
 {
-	std::cout << rhs.getName() << ", grade " << rhs.getGrade() << std::endl;
+	std::cout << rhs.getName() << ", grade " << rhs.getGrade();
 	return o;
 }

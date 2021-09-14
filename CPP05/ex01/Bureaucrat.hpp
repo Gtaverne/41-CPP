@@ -2,8 +2,10 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
-//# include <stdexcept>
+# include <stdexcept>
+# include "Form.hpp"
 
+class Form;
 
 class Bureaucrat
 {
@@ -43,13 +45,13 @@ public:
 
 
 //Class functions
-private:
+	void signForm(Form tosign)
+;private:
 	std::string const _name;
 	int _rank;
 
 };
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs);
-
 
 #endif
