@@ -29,13 +29,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbe
 	std::cout << "A ShrubberyCreationForm has been created, its target is: " << target << std::endl;
 }
 
-
 //Getters and setters
 const std::string ShrubberyCreationForm::getTarget(void) const
 {
 	return (_target);
 }
-
 
 //Class functions
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const

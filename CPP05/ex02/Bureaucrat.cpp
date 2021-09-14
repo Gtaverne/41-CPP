@@ -82,6 +82,22 @@ void Bureaucrat::signForm(Form *tosign)
 	}
 }
 
+void Bureaucrat::executeForm (Form const & form)
+{
+	if (this->getGrade() > form.getexecGrade())
+	{
+		std::cout << this->getName() << " cannot execute " << form << " because his grade is too low" << std::endl;
+	}
+	else if (!form.isSigned())
+	{
+		std::cout << this->getName() << " cannot execute " << form << " because it has not been signed" << std::endl;
+	}
+	else
+	{
+		form.execute(*this);
+	}
+}
+
 //Environment functions
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs)
