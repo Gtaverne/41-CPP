@@ -51,4 +51,8 @@ int main()
 			std::cout << e.what() << std::endl;
 		}
 	}
+	std::cout << std::endl << "TEST: The one from the subject" << std::endl;
+	Intern someRandomIntern;
+	Form* rrf;
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 }

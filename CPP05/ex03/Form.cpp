@@ -25,7 +25,7 @@ Form::~Form()
 
 Form::Form(std::string name, int signGrade, int execGrade) : _formName(name), _signGrade(signGrade), _execGrade(execGrade), _signed(0)
 {
-	std::cout << "Creation of a new form: " << *this << std::endl;
+	//std::cout << "Creation of a new form: " << *this << std::endl;
 	if (_signGrade < 1 || _execGrade < 1)
 		throw Form::GradeTooHighException();
 	if (_signGrade > 150|| _execGrade > 150)
