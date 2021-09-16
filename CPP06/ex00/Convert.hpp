@@ -4,6 +4,7 @@
 # include <iostream>
 # include <cstdlib>
 # include <string>
+# include <iomanip>
 
 class Convert
 {
@@ -31,6 +32,8 @@ class impossibleException: public std::exception {
 	Convert & operator=(Convert const & rhs);
 	virtual ~Convert();
 
+	Convert(std::string str);
+
 //Getters and setters
 	std::string getRawstr(void) const;
 	void setRawstr(std::string str);
@@ -40,6 +43,8 @@ class impossibleException: public std::exception {
 	int intConv();
 	float floatConv();
 	double doubleConv();
+
+	bool isValid();
 
 private:
 

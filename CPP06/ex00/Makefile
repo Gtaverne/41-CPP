@@ -1,8 +1,8 @@
 NAME	=	convert
 CC		=	clang++
-HEADER	=	
+HEADER	=	Convert.hpp
 OBJDIR	=	obj
-SRC		=	main.cpp
+SRC		=	main.cpp Convert.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
