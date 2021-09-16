@@ -39,6 +39,9 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs)
 	setMP(rhs.getMP());
 	setATK(rhs.getATK());
 	
+	//...
+	this->_name = rhs._name;
+
 	setGuardstatus(rhs.getGuardstatus());
 	
 	return *this;
@@ -46,6 +49,5 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs)
 
 
 void DiamondTrap::whoAmI(void) {
-	std::cout << "Hi, my name is : " << _name << ", I am a : " << getName() << std::endl;
-
+	std::cout << "Hi, my name is : " << _name << ", my claptrap name is : " << getName() << std::endl;
 }

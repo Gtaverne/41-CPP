@@ -11,7 +11,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "Ca compile \\o/ \nL'util s'appelle Serena\n"
+	@echo "Ca compile \\o/ \nL'util s'appelle $(NAME)\n"
 
 $(OBJDIR)/%.o: %.cpp
 	@mkdir -p obj
@@ -23,6 +23,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -rf obj
 
 re: fclean all
 

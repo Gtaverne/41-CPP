@@ -10,7 +10,7 @@ int main(void)
 	Frag1.takeDamage(5);
 	Frag1.beRepaired(1000);
 	std::cout << "------------" << std::endl;
-	std::cout << "attack provient de ScavTrap, le reste est le defaut claptrap" << std::endl;
+	std::cout << "attack provient de ScavTrap" << std::endl;
 	std::cout << "------------" << std::endl;
 
 	std::cout << std::endl << "------------" << std::endl;

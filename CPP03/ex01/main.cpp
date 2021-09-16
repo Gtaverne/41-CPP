@@ -16,10 +16,10 @@ int main(void)
 	std::cout << std::endl << "------------" << std::endl;
 	std::cout << "On fait une creation par copie" << std::endl;
 	std::cout << "------------" << std::endl;
-	ScavTrap New(Claque);
-	New.attack("Roger");
+	ScavTrap STrap(Claque);
+	STrap.attack("Roger");
 	ScavTrap encore;
-	encore = New;
+	encore = STrap;
 	encore.setName("Encore");
 	encore.takeDamage(100);
 

@@ -1,5 +1,5 @@
-#ifndef Intern_HPP
-# define Intern_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 # include <iostream>
 # include "Form.hpp"
