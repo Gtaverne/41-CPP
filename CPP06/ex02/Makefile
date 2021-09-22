@@ -1,8 +1,8 @@
-NAME	=	serializer
+NAME	=	identifier
 CC		=	clang++
-HEADER	=	Data.hpp
+HEADER	=	Base.hpp
 OBJDIR	=	obj
-SRC		=	main.cpp Data.cpp
+SRC		=	main.cpp Base.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
