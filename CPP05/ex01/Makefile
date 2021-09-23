@@ -5,7 +5,7 @@ OBJDIR	=	obj
 SRC		=	main.cpp Bureaucrat.cpp Form.cpp
 
 OBJ 	=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 ifneq (,$(findstring xterm,${TERM}))
 	GREEN := $(shell tput -Txterm setaf 2)
