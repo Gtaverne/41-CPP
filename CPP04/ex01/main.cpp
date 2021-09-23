@@ -15,6 +15,25 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
+	std::cout << std::endl;
+	std::cout << "---More tests: Animal arrays---" << std::endl;
+	{
+		Animal *zoo[10];
+		for (int i = 0; i < 10; i++)
+		{
+			if (i%2 == 0)
+				zoo[i] = new Cat();
+			else
+				zoo[i] = new Dog();
+		}
+		std::cout << "---TEST AN ELEMENT OF THE ARRAY---" << std::endl;
+		std::cout << "What is the 4th element ? " << zoo[3]->getType() << std::endl;
+		std::cout << "What is the 5th element ? " << zoo[4]->getType() << std::endl; 
+		std::cout << "---DELETION OF THE ARRAY---" << std::endl;
+		for (int i = 0; i < 10; i++)
+			delete zoo[i];
+	}
+
 
 	std::cout << std::endl;
 	std::cout << "---More tests---" << std::endl;
@@ -24,6 +43,8 @@ int main()
 		Cat Bob;
 		miaouss.makeSound();
 		std::cout << "What is miaouss: a " << miaouss.getType() << std::endl;
+		Bob = miaouss;
+		// ici, on teste qu'on peut modifier miaouss sans modifier Bob, il s'agit bien d'une deep copy
 		miaouss.setType("Not a cat");
 		std::cout << "What is miaouss now: " << miaouss.getType() << std::endl;
 		miaouss = Bob;

@@ -19,7 +19,7 @@ public:
 	bool getGuardstatus(void) const;
 	void setGuardstatus(bool);
 
-private:
+protected:
 	bool _guard;
 	
 };
