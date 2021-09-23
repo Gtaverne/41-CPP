@@ -14,6 +14,9 @@ int main()
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+	delete meta;
+	delete i;
+	delete j;
 
 	std::cout << std::endl;
 	std::cout << "---More tests: Animal arrays---" << std::endl;
@@ -69,7 +72,5 @@ int main()
 
 	std::cout << std::endl;
 	std::cout << "---Slaughter time---" << std::endl;
-	delete meta;
-	delete i;
-	delete j;
+
 }
