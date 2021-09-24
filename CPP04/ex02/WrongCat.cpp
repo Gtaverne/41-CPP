@@ -22,13 +22,7 @@ WrongCat & WrongCat::operator= (WrongCat const & rhs)
 }
 
 //Setter & getter
-std::string WrongCat::getType(void) const {
-	return _type ;
-}
 
-void WrongCat::setType(std::string const newtype) {
-	_type = newtype ;
-}
 
 //Member function
 void WrongCat::makeSound() const {

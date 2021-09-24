@@ -22,13 +22,6 @@ Dog & Dog::operator= (Dog const & rhs)
 }
 
 //Setter & getter
-std::string Dog::getType(void) const {
-	return _type ;
-}
-
-void Dog::setType(std::string const newtype) {
-	_type = newtype ;
-}
 
 //Member function
 void Dog::makeSound() const{

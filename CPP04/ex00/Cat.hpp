@@ -13,12 +13,9 @@ public:
 	virtual Cat & operator= (Cat const & rhs);
 
 	virtual void makeSound() const;
+	
+private:
 
-	virtual std::string getType(void) const;
-	virtual void setType(std::string const newtype);
-
-protected:
-	std::string _type;
 };
 
 #endif

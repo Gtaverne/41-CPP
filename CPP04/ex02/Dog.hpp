@@ -13,15 +13,12 @@ public:
 	virtual ~Dog(void);
 	virtual Dog & operator= (Dog const & rhs);
 
-	virtual void makeSound() const;
+	void makeSound() const;
 
-	virtual std::string getType(void) const;
-	virtual void setType(std::string const newtype);
 	std::string getDogIdea(int) const;
 	void setDogIdea(int const i, std::string const idea);
 
-protected:
-	std::string _type;
+private:
 	Brain* _DogBrain;
 };
 

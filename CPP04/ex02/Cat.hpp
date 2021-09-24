@@ -13,15 +13,12 @@ public:
 	virtual ~Cat(void);
 	virtual Cat & operator= (Cat const & rhs);
 
-	virtual void makeSound() const;
+	void makeSound() const;
 
-	virtual std::string getType(void) const;
-	virtual void setType(std::string const newtype);
 	std::string getCatIdea(int) const;
 	void setCatIdea(int const i, std::string const idea);
 
-protected:
-	std::string _type;
+private:
 	Brain* _catBrain;
 };
 

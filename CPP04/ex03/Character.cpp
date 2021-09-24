@@ -35,6 +35,13 @@ Character & Character::operator=(Character const & rhs)
 	return *this;
 }
 
+Character::Character(std::string name) : _name(name)
+{
+	for (int i = 0; i < 4; i++)
+		_mat_inventory[i] = NULL;
+	std::cout << "A new character has entered the game: " << name << std::endl;
+}
+
 Character::~Character()
 {
 	std::cout << "You destructed "<< _name << std::endl;
@@ -47,12 +54,6 @@ std::string const & Character::getName() const
 }
 
 //Class function
-Character::Character(std::string name) : _name(name)
-{
-	for (int i = 0; i < 4; i++)
-		_mat_inventory[i] = NULL;
-	std::cout << "A new character has entered the game: " << name << std::endl;
-}
 
 void Character::use(int idx, ICharacter& target) {
 	if (idx < 0 || idx > 3 || _mat_inventory[idx] == NULL)

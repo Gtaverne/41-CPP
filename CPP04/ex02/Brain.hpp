@@ -16,7 +16,7 @@ public:
 	std::string getIdea(int const i) const;
 
 
-protected:
+private:
 	std::string _ideas[100];
 };
 

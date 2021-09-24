@@ -27,14 +27,6 @@ Dog & Dog::operator= (Dog const & rhs)
 }
 
 //Setter & getter
-std::string Dog::getType(void) const {
-	return _type ;
-}
-
-void Dog::setType(std::string const newtype) {
-	_type = newtype ;
-}
-
 void Dog::setDogIdea(int i, std::string const idea) {
 	_DogBrain->setIdea(i, idea);
 }

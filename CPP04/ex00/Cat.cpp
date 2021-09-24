@@ -22,13 +22,6 @@ Cat & Cat::operator= (Cat const & rhs)
 }
 
 //Setter & getter
-std::string Cat::getType(void) const {
-	return _type ;
-}
-
-void Cat::setType(std::string const newtype) {
-	_type = newtype ;
-}
 
 //Member function
 void Cat::makeSound() const {

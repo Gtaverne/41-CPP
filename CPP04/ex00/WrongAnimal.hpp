@@ -10,12 +10,12 @@ public:
 	WrongAnimal(void);
 	WrongAnimal(WrongAnimal const &input);
 	virtual ~WrongAnimal(void);
-	virtual WrongAnimal & operator= (WrongAnimal const & rhs);
+	WrongAnimal & operator= (WrongAnimal const & rhs);
 
-	virtual std::string getType(void) const;
-	virtual void setType(std::string const newtype);
+	std::string getType(void) const;
+	void setType(std::string const newtype);
 
-	virtual void makeSound() const;
+	void makeSound() const;
 
 protected:
 	std::string _type;

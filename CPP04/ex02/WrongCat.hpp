@@ -9,16 +9,13 @@ public:
 	//canon
 	WrongCat(void);
 	WrongCat(WrongCat const &input);
-	virtual ~WrongCat(void);
-	virtual WrongCat & operator= (WrongCat const & rhs);
+	~WrongCat(void);
+	WrongCat & operator= (WrongCat const & rhs);
 
-	virtual void makeSound() const;
+	void makeSound() const;
 
-	virtual std::string getType(void) const;
-	virtual void setType(std::string const newtype);
+private:
 
-protected:
-	std::string _type;
 };
 
 #endif

@@ -12,13 +12,10 @@ public:
 	virtual ~Dog(void);
 	virtual Dog & operator= (Dog const & rhs);
 
-	virtual void makeSound() const;
+	void makeSound() const;
 
-	virtual std::string getType(void) const;
-	virtual void setType(std::string const newtype);
+private:
 
-protected:
-	std::string _type;
 };
 
 #endif

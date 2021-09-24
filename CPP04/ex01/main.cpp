@@ -61,16 +61,37 @@ int main()
 	std::cout << std::endl;
 	std::cout << "---Even more tests---" << std::endl;
 	{
-		Cat miaouss;
+		Cat *miaouss = new Cat(); //if we set ideas, it cannot be of type const
+		std::cout << "Miaouss has a generic brain" << std::endl << "Print the first 5" << std::endl;
 		for (int n = 0; n < 5; n++)
-			std::cout << miaouss.getCatIdea(n) << std::endl;
-		miaouss.setCatIdea(2, "I want pikachu");
-		std::cout << "Miaouss got a new idea" << std::endl;
+			std::cout << miaouss->getCatIdea(n) << std::endl;
+		miaouss->setCatIdea(2, "I want pikachu");
+		std::cout << "Miaouss got a new idea" << std::endl << "Print the first 5" << std::endl;
 		for (int n = 0; n < 5; n++)
-			std::cout << miaouss.getCatIdea(n) << std::endl;
+			std::cout << miaouss->getCatIdea(n) << std::endl;
+		delete miaouss;
 	}
 
 	std::cout << std::endl;
 	std::cout << "---Slaughter time---" << std::endl;
 
+
+	//Example of shallow copy
+	// int a = 42;
+	// int *ptr = &a;
+	// {
+	// 	int *tmp = ptr;
+	// 	std::cout << *tmp << std::endl;
+	// 	*tmp = 0;
+	// }
+	// std::cout << a << std::endl;
+	// a = 41;
+	// {
+	// 	int *tmp = new(int);
+	// 	*tmp = *ptr ;
+	// 	std::cout << *tmp << std::endl;
+	// 	*tmp = 0;
+	// 	delete tmp;
+	// }
+	// std::cout << a << std::endl;
 }
