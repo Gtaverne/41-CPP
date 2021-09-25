@@ -3,6 +3,9 @@
 
 # include <iostream>
 # include <vector>
+# include <algorithm>
+# include <stdlib.h>
+# include <time.h>
 
 class Span
 {
@@ -32,8 +35,10 @@ class InvalidSpanException : public std::exception
 	Span & operator=(Span const & rhs);
 	virtual ~Span();
 
-//Getters and setters
+	Span(unsigned int u);
 
+//Getters and setters
+	int getLength(void) const;
 
 //Class functions
 	void addNumber(int n);
