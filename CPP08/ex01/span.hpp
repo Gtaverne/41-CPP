@@ -4,6 +4,7 @@
 # include <iostream>
 # include <vector>
 # include <algorithm>
+//this is to generate numbers
 # include <stdlib.h>
 # include <time.h>
 
@@ -42,6 +43,7 @@ class InvalidSpanException : public std::exception
 
 //Class functions
 	void addNumber(int n);
+	void addmanyNumbers(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end);
 	int shortestSpan(void);
 	int longestSpan(void);
 

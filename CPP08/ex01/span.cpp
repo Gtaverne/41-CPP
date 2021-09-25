@@ -39,6 +39,21 @@ void Span::addNumber(int n)
 		throw (AlreadyFullException());	
 }
 
+void Span::addmanyNumbers(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end)
+{
+	if (this->_store.size() + (end - begin) <= this->_N)
+	{
+		while (begin < end)
+		{
+			this->_store.push_back(*begin);
+			begin++;
+		}
+	}
+	else
+		throw (AlreadyFullException());	
+}
+
+
 int Span::shortestSpan(void)
 {
 	if (this->_store.size() < 2)
@@ -56,10 +71,7 @@ int Span::longestSpan(void)
 {
 	if (this->_store.size() < 2)
 		throw (InvalidSpanException());
-	std::vector<int>tosort = this->_store;
-	std::sort(tosort.begin(), tosort.end());
-
-	return (tosort.back() - tosort.front());
+	return (*std::max_element(this->_store.begin(), this->_store.end()) - *std::min_element(this->_store.begin(), this->_store.end()));
 }
 
 //Environment functions

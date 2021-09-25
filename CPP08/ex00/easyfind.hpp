@@ -15,7 +15,7 @@ class NothingFoundException : public std::exception
 public:
 	char const *what() const throw()
 	{
-		return("Value not found in vector");
+		return("Value not found in data");
 	}
 };
 

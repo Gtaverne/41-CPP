@@ -4,11 +4,22 @@ int main()
 {
 	srand(time(NULL));
 	{
-		Span sp(100);
-		for (int i = 0; i < 10; i++)
+	Span sp = Span(5);
+	sp.addNumber(5);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
+	}
+
+	{
+		Span sp(10000);
+		for (int i = 0; i < 10000; i++)
 		{
-			int k = rand() % 100;
-			std::cout << "New element : " << k << std::endl;
+			int k = rand() ;
+			//std::cout << "New element : " << k << std::endl;
 			sp.addNumber(k);
 		}
 		
@@ -17,10 +28,17 @@ int main()
 	}
 	std::cout << "----------More tests on exceptions-----------" << std::endl;
 	{
-		Span spn(3);
-		spn.addNumber(1000);
-		spn.addNumber(15);
-		spn.addNumber(100);
+		Span spn(5);
+		std::vector<int> v;
+		//We can't do vector<int> vect{ 10, 20, 30 } without cpp11
+		v.push_back(7);
+		v.push_back(5);
+		v.push_back(16);
+		v.push_back(8);
+		v.push_back(100);
+		spn.addmanyNumbers(v.begin(), v.end());
+		std::cout << "Longest span: " << spn.longestSpan() << std::endl;
+		std::cout << "Shortest span: " << spn.shortestSpan() << std::endl;
 		//We try the "Exceeding max length" exception
 		try
 		{
@@ -50,7 +68,5 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
-	
-		
 	}
 }
