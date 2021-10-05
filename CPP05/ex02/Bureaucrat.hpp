@@ -45,7 +45,7 @@ public:
 
 
 //Class functions
-	void signForm(Form *tosign);
+	void signForm(Form &tosign);
 	void executeForm (Form const & form);
 	
 private:

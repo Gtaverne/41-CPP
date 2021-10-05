@@ -43,7 +43,7 @@ public:
 
 
 //Class functions
-	void beSigned(Bureaucrat bob);
+	void beSigned(Bureaucrat &bob);
 
 private:
 	std::string const _formName;

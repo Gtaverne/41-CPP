@@ -9,7 +9,7 @@ public:
 	//canon
 	WrongAnimal(void);
 	WrongAnimal(WrongAnimal const &input);
-	virtual ~WrongAnimal(void);
+	~WrongAnimal(void);
 	WrongAnimal & operator= (WrongAnimal const & rhs);
 
 	std::string getType(void) const;

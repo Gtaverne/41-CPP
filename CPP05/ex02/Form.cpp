@@ -60,7 +60,7 @@ void Form::setSign(bool const signature)
 
 
 //Class functions
-void Form::beSigned(Bureaucrat bob)
+void Form::beSigned(Bureaucrat &bob)
 {
 	if (bob.getGrade() <= this->getsignGrade())
 	{

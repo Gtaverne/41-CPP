@@ -51,7 +51,7 @@ public:
 
 
 //Class functions
-	void beSigned(Bureaucrat bob);
+	void beSigned(Bureaucrat &bob);
 	virtual void execute (Bureaucrat const & executor) const = 0;
 
 private:

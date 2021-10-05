@@ -69,16 +69,16 @@ void Bureaucrat::gradeSanction(void)
 }
 
 //Class functions
-void Bureaucrat::signForm(Form *tosign)
+void Bureaucrat::signForm(Form &tosign)
 {
-	if (this->getGrade() <= tosign->getsignGrade())
+	if (this->getGrade() <= tosign.getsignGrade())
 	{
-		std::cout << this->getName() << " signs " << tosign->getName() << std::endl;
-		tosign->setSign(1);
+		std::cout << this->getName() << " signs " << tosign.getName() << std::endl;
+		tosign.setSign(1);
 	}
 	else
 	{
-		std::cout << this->getName() << " cannot sign " << *tosign << " because his grade is too low" << std::endl;
+		std::cout << this->getName() << " cannot sign " << tosign << " because his grade is too low" << std::endl;
 	}
 }
 

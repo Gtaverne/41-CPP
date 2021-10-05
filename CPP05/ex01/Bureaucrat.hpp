@@ -43,14 +43,12 @@ public:
 	void gradePromotion(void);
 	void gradeSanction(void);
 
-
 //Class functions
-	void signForm(Form *tosign);
+	void signForm(Form &tosign);
 	
 private:
 	std::string const _name;
 	int _rank;
-
 };
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs);

@@ -60,7 +60,7 @@ int main()
 		try
 		{
 			Form hl("Table of law", 5, 7);
-			bob.signForm(&hl);
+			bob.signForm(hl);
 			std::cout << hl << std::endl;
 		}
 		catch (Form::GradeTooLowException & e) {
@@ -76,7 +76,7 @@ int main()
 		try
 		{
 			Form hl("Table of law", 5, 7);
-			god.signForm(&hl);
+			god.signForm(hl);
 			std::cout << hl << std::endl;
 		}
 		catch (Form::GradeTooLowException & e) {

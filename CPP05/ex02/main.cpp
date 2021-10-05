@@ -24,11 +24,11 @@ int main()
 			//We test both execute and executeForm
 			shroub.beSigned(god);
 			shroub.execute(bob);
-			bob.signForm(&roboto);
+			bob.signForm(roboto);
 			god.executeForm(roboto);
 
 			ShrubberyCreationForm encorenoel("encorenoel");
-			god.signForm(&encorenoel);
+			god.signForm(encorenoel);
 			bob.executeForm(encorenoel);
 		}
 		catch (Form::GradeTooLowException & e) {

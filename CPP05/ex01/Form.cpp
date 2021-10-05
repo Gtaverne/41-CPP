@@ -3,7 +3,7 @@
 //Canon
 Form::Form() : _formName("Nameless form"), 	_signGrade(150), _execGrade(150), _signed(0)
 {
-	std::cout << "A nameless, unsigned, form with the lowest possible ranks has been created" << std::endl;
+	std::cout << "A nameless, unsigned, form with the lowest possible rank has been created" << std::endl;
 }
 
 Form::Form(Form const & src) : _formName(src.getName()), _signGrade(src.getsignGrade()), _execGrade(src.getexecGrade()), _signed(src.isSigned())
@@ -60,7 +60,7 @@ void Form::setSign(bool const signature)
 
 
 //Class functions
-void Form::beSigned(Bureaucrat bob)
+void Form::beSigned(Bureaucrat &bob)
 {
 	if (bob.getGrade() <= this->getsignGrade())
 	{
