@@ -26,7 +26,7 @@ $(OBJDIR)/%.o: %.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 go:	re
-	@./$(NAME)
+	@./$(NAME) "42"
 
 clean:
 	@rm -f $(OBJ)

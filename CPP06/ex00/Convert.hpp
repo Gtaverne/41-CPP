@@ -3,8 +3,11 @@
 
 # include <iostream>
 # include <cstdlib>
+# include <stdlib.h>
 # include <string>
 # include <iomanip>
+# include <limits.h>
+# include <math.h>
 
 class Convert
 {
@@ -25,6 +28,26 @@ class impossibleException: public std::exception {
 		}
 };
 
+class NANException: public std::exception {
+	public:
+		virtual const char* what() const throw() {
+			return ("Not a number");
+		}
+};
+
+class TooBigException: public std::exception {
+	public:
+		virtual const char* what() const throw() {
+			return ("Number too big");
+		}
+};
+
+class TooSmallException: public std::exception {
+	public:
+		virtual const char* what() const throw() {
+			return ("Number too small");
+		}
+};
 
 //Canon
 	Convert();
@@ -34,21 +57,22 @@ class impossibleException: public std::exception {
 
 	Convert(std::string str);
 
-//Getters and setters
-	std::string getRawstr(void) const;
-	void setRawstr(std::string str);
+//Printers
+	void Charprint(std::ostream & o, Convert const & rhs) const;
+	void Intprint(std::ostream & o, Convert const & rhs) const;
+	void Floatprint(std::ostream & o, Convert const & rhs) const;
+	void Doubleprint(std::ostream & o, Convert const & rhs) const;
 
-//Class functions
-	char charConv();
-	int intConv();
-	float floatConv();
-	double doubleConv();
 
-	bool isValid();
+//Class converters
+	char charConv(void) const;
+	int intConv(void) const;
+	float floatConv(void) const;
+	double doubleConv(void) const;
 
 private:
-
-std::string _rawstring;
+	double _rawdata;
+	char _c;
 
 };
 
