@@ -27,7 +27,7 @@ void Convert::Charprint(std::ostream & o, Convert const & rhs) const
 	try
 	{
 		char c = rhs.charConv();
-		if (std::isprint(c))
+		if (std::isprint(c) && rhs._rawdata < 127)
 			o << "'" << c << "'";
 		else
 			throw Convert::nonDisplayableException();
@@ -92,7 +92,11 @@ char Convert::charConv(void) const
 	if (isnan(this->_rawdata))
 		throw Convert::impossibleException();
 	if (static_cast<int>(this->_rawdata) == 0 && _c != 0)
+	{
+		if (_c == '0')
+			return (0);
 		return (_c);
+	}
 	return (static_cast<char>(this->_rawdata));
 }
 

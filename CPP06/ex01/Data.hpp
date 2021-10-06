@@ -2,6 +2,7 @@
 # define DATA_HPP
 
 # include <iostream>
+# include <stdint.h> //this lib is used to be c++ 98 compliant on Linux
 
 class Data
 {
