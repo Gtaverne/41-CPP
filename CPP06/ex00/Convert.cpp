@@ -91,7 +91,7 @@ char Convert::charConv(void) const
 {
 	if (isnan(this->_rawdata))
 		throw Convert::impossibleException();
-	if (static_cast<char>(this->_rawdata) == 0 && _c != 0)
+	if (static_cast<int>(this->_rawdata) == 0 && _c != 0)
 		return (_c);
 	return (static_cast<char>(this->_rawdata));
 }
@@ -100,6 +100,10 @@ int Convert::intConv(void) const
 {
 	if (isnan(this->_rawdata))
 		throw Convert::impossibleException();
+	if (this->_rawdata > INT_MAX)
+		throw Convert::TooBigException();
+	if (this->_rawdata < INT_MIN)
+		throw Convert::TooSmallException();
 	return (static_cast<int>(this->_rawdata));
 }
 

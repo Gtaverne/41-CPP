@@ -18,6 +18,10 @@ int main()
 	{
 		identify(BaseTab[i]);
 	}
+	std::cout << std::endl << "We test a NULL ptr, so neither A, B or C. RESULT : ";
+	Base *nptr = NULL;
+	identify(nptr);
+	std::cout << std::endl;
 	//Tester reference
 	std::cout << "We test references" << std::endl;
 	for (int i = 0; i < max ; i++)

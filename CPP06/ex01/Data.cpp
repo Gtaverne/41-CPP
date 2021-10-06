@@ -8,7 +8,7 @@ Data::Data() : n(0)
 
 Data::Data(Data const & src)
 {
-	std::cout << "An Data has been created by copy" << std::endl;
+	std::cout << "A Data has been created by copy" << std::endl;
 	*this = src;
 }
 
@@ -22,7 +22,6 @@ Data::~Data()
 {
 }
 
-
 uintptr_t serialize(Data* ptr)
 {
 	return reinterpret_cast<uintptr_t>(ptr);
@@ -31,4 +30,11 @@ uintptr_t serialize(Data* ptr)
 Data* deserialize(uintptr_t raw)
 {
 	return reinterpret_cast<Data*>(raw);
+}
+
+std::ostream & operator<<(std::ostream & o, Data const & rhs)
+{
+	std::cout << "Here is your stored value " << rhs.n ;
+
+	return o;
 }

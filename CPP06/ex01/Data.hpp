@@ -17,5 +17,7 @@ public:
 
 uintptr_t serialize(Data* ptr);
 Data* deserialize(uintptr_t raw);
+std::ostream & operator<<(std::ostream & o, Data const & rhs);
+
 
 #endif

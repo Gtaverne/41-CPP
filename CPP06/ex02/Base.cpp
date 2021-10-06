@@ -41,11 +41,16 @@ void identify(Base *p)
 		std::cout << "C" << std::endl;
 		return ;
 	}
+	if (!p)
+	{
+		std::cout << "NULL" << std::endl;
+		return ;
+	}
 }
 
 void identify( Base & p)
 {
-	//std::cout << "ref" << std::endl;
+
 	try
 	{
 		(void)dynamic_cast<A&>(p);
