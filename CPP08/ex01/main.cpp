@@ -1,5 +1,8 @@
 #include "span.hpp"
 
+#define RANGE 100000
+#define RANDOM_RANGE 100000000
+
 int main()
 {
 	srand(time(NULL));
@@ -15,10 +18,10 @@ int main()
 	}
 
 	{
-		Span sp(10000);
-		for (int i = 0; i < 10000; i++)
+		Span sp(RANGE);
+		for (int i = 0; i < RANGE; i++)
 		{
-			int k = rand() ;
+			int k = rand() % RANDOM_RANGE;
 			//std::cout << "New element : " << k << std::endl;
 			sp.addNumber(k);
 		}

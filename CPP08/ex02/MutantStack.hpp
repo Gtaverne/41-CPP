@@ -3,17 +3,20 @@
 
 #include <iostream>
 #include <stack>
+#include <list>
 
 template <typename T>
 class MutantStack : public std::stack<T>
 {
 public:
 	MutantStack(void) : std::stack<T>() {};
-	MutantStack(MutantStack const & src)
+	MutantStack(MutantStack const & src) {*this = src;}
+	virtual ~MutantStack() {};
+	MutantStack &operator=(const MutantStack &rhs)
 	{
-		*this = src;
+		this->std::stack<T>::operator=(rhs);
+		return *this;
 	}
-	~MutantStack() {};
 
 	typedef typename std::stack<T>::container_type::iterator iterator;
 	iterator begin(void)
@@ -23,10 +26,6 @@ public:
 	iterator end(void)
 	{
 		return (this->c.end());
-	}
-	MutantStack &operator=(const MutantStack &rhs)
-	{
-		this->std::stack<T>::operator=(rhs);
 	}
 
 private:

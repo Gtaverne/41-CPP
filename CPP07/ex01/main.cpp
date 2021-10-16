@@ -4,14 +4,14 @@
 
 void firstfunc(int &i)
 {
-	//check if the value is above 4 and sets it to 0 or 1 accordingly
-	std::cout << i << ( i > 4 ? " Oui": " Non") << std::endl;
+	// check if the value is above 4 and sets it to 0 or 1 accordingly
+	std::cout << i << ( i > 4 ? " BIG": " small") << std::endl;
 	( i > 4 ? i = 0 : i = 1);
 }
 
 void secondfunc(std::string &str)
 {
-	//Capitalize the string
+	// Capitalize the string
 	int i = 0;
 	while (str[i])
 	{
@@ -52,3 +52,29 @@ int main()
 	}
 	return 0;
 }
+
+// class Awesome
+// {
+// public:
+// 	Awesome(void): _n(42) {}
+// 	int get_n() const {return this->_n;}
+
+// private:
+// 	int _n;
+// };
+
+// std::ostream & operator<<(std::ostream & o, Awesome const & rhs) {o << rhs.get_n(); return o;}
+
+// template <typename T>
+// void print(T const & x) {std::cout << x << std::endl; return; }
+
+// int main ()
+// {
+// 	int tab[] = {0, 1, 2, 3, 4};
+// 	Awesome tab2[5];
+
+// 	iter(tab, 5, print);
+// 	iter(tab2, 5, print);
+
+// 	return 0;
+// }

@@ -2,6 +2,8 @@
 # define ARRAY_HPP
 
 #include <iostream>
+#include <time.h>
+#include <stdlib.h>
 
 template < typename T>
 class Array
@@ -22,7 +24,7 @@ public:
 	}
 	Array & operator=(Array const & rhs)
 	{
-		if (_size != 0 && _size != rhs._size)
+		if (_array != 0 && _size != rhs._size)
 			delete [] _array;
 		this->_size = rhs._size;
 		this->_array = new T[this->_size];

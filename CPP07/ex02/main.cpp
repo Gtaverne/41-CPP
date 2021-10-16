@@ -2,6 +2,8 @@
 
 #define MAX_VAL 750
 
+
+
 int main ()
 {
 	{
@@ -51,7 +53,7 @@ int main ()
 		{
 			numbers[i] = rand();
 		}
-		//Carful, you'll print a lot if you uncomment this
+		//Careful, you'll print a lot if you uncomment this
 		// std::cout << numbers << std::endl;
 		delete [] mirror;//
 		std::cout << "END OF THE MAIN OF THE SUBJECT" << std::endl;
@@ -75,12 +77,12 @@ int main ()
 		std::cout << "Vect " << vect << std::endl;
 		std::cout << "Vect2 " << vect2 << std::endl;
 
-		Array <int> vect3(0);
+		Array <int> vect3;
 		vect3 = vect2;
 		std::cout << "Vect3 "<< vect3 << std::endl;
 
 	}
-
+	std::cout << std::endl << "NEW TESTS" << std::endl;
 	{
 		size_t len = 5;
 		Array <std::string> vect(len);
@@ -92,6 +94,7 @@ int main ()
 		vect[4] = "Open your eyes,";
 		try
 		{
+			std::cout << "We try to add too much" << std::endl;
 			vect[5] = "Look up to the skies and see,";
 		}
 		catch(const Array<std::string>::OutOfRangeException & e)
@@ -99,14 +102,22 @@ int main ()
 			std::cout << "-BEEP BEEP BEEP-";
 			std::cerr << e.what() << '\n';
 		}
-		std::cout << "Vect " << vect << std::endl;
+		std::cout << std::endl << "Vect " << vect << std::endl;
+		std::cout << std::endl << "We create a new vector long enough" << std::endl;
 		Array <std::string> vect2(len+1);
 		for (unsigned int i = 0; i < len; i++)
 			vect2[i] = vect[i] + "\n";
 		vect2[len] = "Look up to the skies and see,";
-		std::cout << vect2;
+		std::cout <<  vect2;
 		vect = vect2;
-		std::cout << vect << std::endl;
+		std::cout << std::endl << vect << std::endl;
 		std::cout << std::endl;
 	}
+
+	// //Last tests
+	// {
+	// 	Array<int> arrayvide;
+	// 	Array<int> autraArrayvide(0);
+	// 	Array<int> autraArraypleindevide(10);
+	// }
 }

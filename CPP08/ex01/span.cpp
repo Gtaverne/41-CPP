@@ -39,6 +39,7 @@ void Span::addNumber(int n)
 		throw (AlreadyFullException());	
 }
 
+
 void Span::addmanyNumbers(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end)
 {
 	if (this->_store.size() + (end - begin) <= this->_N)
@@ -53,7 +54,18 @@ void Span::addmanyNumbers(std::vector<int>::const_iterator begin, std::vector<in
 		throw (AlreadyFullException());	
 }
 
+//From <algorithm>, we use sort and max/min_elements
+//https://www.cplusplus.com/reference/algorithm/
 
+//super easy, it's just max - min
+int Span::longestSpan(void)
+{
+	if (this->_store.size() < 2)
+		throw (InvalidSpanException());
+	return (*std::max_element(this->_store.begin(), this->_store.end()) - *std::min_element(this->_store.begin(), this->_store.end()));
+}
+
+//Here you do a difference between 2 neighbors and you take the max
 int Span::shortestSpan(void)
 {
 	if (this->_store.size() < 2)
@@ -65,13 +77,6 @@ int Span::shortestSpan(void)
 		tosort[i] = tosort[i+1] - tosort[i];
 	return (*std::min_element(tosort.begin(), tosort.end() - 1));
 
-}
-
-int Span::longestSpan(void)
-{
-	if (this->_store.size() < 2)
-		throw (InvalidSpanException());
-	return (*std::max_element(this->_store.begin(), this->_store.end()) - *std::min_element(this->_store.begin(), this->_store.end()));
 }
 
 //Environment functions

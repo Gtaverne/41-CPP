@@ -33,3 +33,42 @@ int main( void ) {
 	return 0;
 
 }
+
+
+
+//*******************************//
+// Uncomment for correction      //
+//*******************************//
+
+// class Awesome
+// {
+// public:
+// 	Awesome(): _n(0) {}
+// 	Awesome(int n): _n(n) {}
+// 	Awesome & operator=(Awesome & rhs) { _n = rhs._n ; return *this;}
+// 	virtual ~Awesome() {};
+
+// 	bool operator == (Awesome const &rhs) const {return this->_n == rhs._n;}
+// 	bool operator != (Awesome const &rhs) const {return this->_n != rhs._n;}
+// 	bool operator > (Awesome const &rhs) const {return this->_n > rhs._n;}
+// 	bool operator < (Awesome const &rhs) const {return this->_n < rhs._n;}
+// 	bool operator >= (Awesome const &rhs) const {return this->_n >= rhs._n;}
+// 	bool operator <= (Awesome const &rhs) const {return this->_n <= rhs._n;}
+// 	int get_n() const {return _n;}
+
+	
+// private:
+// 	int _n;
+// };
+
+// std::ostream & operator<<(std::ostream & o, Awesome const & rhs) {o << rhs.get_n(); return o;}
+
+// int main(void)
+// {
+// 	Awesome a(2), b(4);
+// 	swap(a,b);
+// 	std::cout << a << "" << b << std::endl;
+// 	std::cout << max(a,b) << std::endl;
+// 	std::cout << min(a,b) << std::endl;
+// 	return(0);
+// }
